@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { org } from "@/data/site";
+import { Mail, Phone, MessageCircle } from "lucide-react";
+import { org, contact } from "@/data/site";
 import { Logo } from "@/components/site/Logo";
 
 const columns = [
@@ -43,6 +44,41 @@ export function Footer() {
             Fiecare copil merită șansa de a trăi experiențe extraordinare, de a învăța prin ele și
             de a descoperi de ce este capabil.
           </p>
+          <h2 className="text-eyebrow mt-8 text-cream/60">Contact</h2>
+          <address className="mt-3 space-y-2 text-sm not-italic text-cream/85">
+            <div>
+              <a
+                href={contact.emailHref}
+                aria-label="Trimite un e-mail către Experience for All"
+                className="inline-flex items-center gap-2 underline-offset-4 hover:text-cream hover:underline"
+              >
+                <Mail className="size-4" aria-hidden="true" />
+                {contact.email}
+              </a>
+            </div>
+            <div>
+              <a
+                href={contact.phoneHref}
+                aria-label="Sună Experience for All"
+                className="inline-flex items-center gap-2 underline-offset-4 hover:text-cream hover:underline"
+              >
+                <Phone className="size-4" aria-hidden="true" />
+                {contact.phoneDisplay}
+              </a>
+            </div>
+            <div>
+              <a
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactează Experience for All pe WhatsApp"
+                className="inline-flex items-center gap-2 underline-offset-4 hover:text-cream hover:underline"
+              >
+                <MessageCircle className="size-4" aria-hidden="true" />
+                WhatsApp
+              </a>
+            </div>
+          </address>
           <p className="mt-6 text-eyebrow text-cream/60">{org.tagline}</p>
         </div>
 

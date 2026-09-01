@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { contact } from "@/data/site";
+import { ContactInline } from "@/components/site/ContactInline";
 
 export type Field = {
   name: string;
@@ -36,8 +38,7 @@ export function SimpleForm({
     }
     setSent(true);
     toast.success("Îți mulțumim! Formularul a fost completat.", {
-      description:
-        "Trimiterea automată nu este încă activată. Deocamdată ne poți scrie direct la contact@experienceforall.ro.",
+      description: `Trimiterea automată nu este încă activată. Deocamdată ne poți scrie direct la ${contact.email} sau ne poți suna la ${contact.phoneDisplay}.`,
     });
   }
 
@@ -100,6 +101,10 @@ export function SimpleForm({
           ? "Formular completat. Conectarea la sistemul de trimitere urmează să fie configurată."
           : "Câmpurile marcate cu * sunt obligatorii."}
       </p>
+      <div className="mt-6 border-t border-border pt-4">
+        <p className="text-sm text-muted-foreground">Preferi să ne scrii direct?</p>
+        <ContactInline className="-ml-3 mt-1" />
+      </div>
     </form>
   );
 }

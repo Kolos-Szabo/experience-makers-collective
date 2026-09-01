@@ -3,6 +3,7 @@ import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { donationUses, org, PLACEHOLDER } from "@/data/site";
+import { ContactInline } from "@/components/site/ContactInline";
 
 export const Route = createFileRoute("/implica-te/doneaza")({
   head: () => ({
@@ -104,6 +105,14 @@ function DonatePage() {
               <Button asChild variant="outline" className="mt-5 w-full">
                 <Link to="/implica-te/parteneri">Devino partener</Link>
               </Button>
+            </Reveal>
+
+            <Reveal className="surface-card p-7" delay={220}>
+              <h2 className="text-xl font-bold">Ai întrebări despre donații?</h2>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Îți explicăm exact unde ajunge contribuția ta. Scrie-ne sau sună-ne.
+              </p>
+              <ContactInline className="-ml-3 mt-4" />
             </Reveal>
           </aside>
         </div>

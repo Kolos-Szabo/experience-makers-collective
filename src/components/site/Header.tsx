@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/site/Logo";
+import { contact } from "@/data/site";
 
 const mainNav = [
   { to: "/despre", label: "Despre" },
@@ -104,6 +105,21 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={contact.phoneHref}
+            aria-label="Sună Experience for All"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground xl:inline-flex"
+          >
+            <Phone className="size-4" aria-hidden="true" />
+            {contact.phoneDisplay}
+          </a>
+          <a
+            href={contact.emailHref}
+            aria-label="Trimite un e-mail către Experience for All"
+            className="hidden size-10 items-center justify-center rounded-md border border-border text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground sm:inline-flex"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+          </a>
           <Button asChild variant="cta" size="sm" className="hidden sm:inline-flex">
             <Link to="/implica-te/doneaza">Donează</Link>
           </Button>
@@ -151,6 +167,23 @@ export function Header() {
               Donează
             </Link>
           </Button>
+          <p className="text-eyebrow px-3 pt-5 text-muted-foreground">Contact</p>
+          <a
+            href={contact.phoneHref}
+            aria-label="Sună Experience for All"
+            className="flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-foreground/85 hover:bg-secondary"
+          >
+            <Phone className="size-4" aria-hidden="true" />
+            {contact.phoneDisplay}
+          </a>
+          <a
+            href={contact.emailHref}
+            aria-label="Trimite un e-mail către Experience for All"
+            className="flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-foreground/85 hover:bg-secondary"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {contact.email}
+          </a>
         </nav>
       </div>
     </header>

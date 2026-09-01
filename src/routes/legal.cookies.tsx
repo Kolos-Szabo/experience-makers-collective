@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { org, PLACEHOLDER } from "@/data/site";
+import { contact, PLACEHOLDER } from "@/data/site";
 
 export const Route = createFileRoute("/legal/cookies")({
   head: () => ({
@@ -44,7 +44,7 @@ function CookiesPage() {
             afectate.
           </p>
           <h2 className="display-md pt-6">Întrebări</h2>
-          <p>Scrie-ne la {org.email}.</p>
+          <p>Scrie-ne la <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a>.</p>
         </Prose>
       </Section>
     </>

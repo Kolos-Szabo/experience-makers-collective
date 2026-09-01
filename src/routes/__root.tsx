@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 
 function NotFoundComponent() {
@@ -113,7 +114,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description:
             "Program social și educațional care creează experiențe outdoor și oportunități de educație non-formală pentru copii și adolescenți din sistemul de protecție a copilului din județul Covasna.",
           areaServed: "Covasna, România",
-          email: "contact@experienceforall.ro",
+          email: "infoexperienceforall@gmail.ro",
+          telephone: "+40755011497",
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              contactType: "customer support",
+              email: "infoexperienceforall@gmail.ro",
+              telephone: "+40755011497",
+              availableLanguage: ["ro", "hu", "en"],
+            },
+          ],
         }),
       },
     ],
@@ -151,6 +162,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <WhatsAppFab />
       <Toaster position="top-center" richColors />
     </QueryClientProvider>
   );

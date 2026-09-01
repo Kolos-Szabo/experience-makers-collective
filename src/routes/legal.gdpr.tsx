@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { org } from "@/data/site";
+import { contact } from "@/data/site";
 
 export const Route = createFileRoute("/legal/gdpr")({
   head: () => ({
@@ -43,7 +43,7 @@ function GdprPage() {
           </p>
           <h2 className="display-md pt-6">Retragerea consimțământului</h2>
           <p>
-            Îți poți retrage consimțământul oricând, scriind la {org.email}. Retragerea nu afectează
+            Îți poți retrage consimțământul oricând, scriind la <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a>. Retragerea nu afectează
             legalitatea prelucrării anterioare.
           </p>
           <h2 className="display-md pt-6">Imagini și materiale foto</h2>

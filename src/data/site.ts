@@ -48,13 +48,27 @@ export const org = {
   short:
     "Program social și educațional care creează experiențe outdoor și oportunități de educație non-formală pentru copii și adolescenți din sistemul de protecție a copilului din județul Covasna.",
   county: "Covasna, România",
-  email: "contact@experienceforall.ro",
-  phone: PLACEHOLDER,
+  email: "infoexperienceforall@gmail.ro",
+  phone: "+40 755 011 497",
   address: PLACEHOLDER,
   legalEntity: PLACEHOLDER,
   cui: PLACEHOLDER,
   iban: PLACEHOLDER,
 };
+
+/** Canalele oficiale de contact — folosite peste tot în site. */
+export const contact = {
+  email: "infoexperienceforall@gmail.ro",
+  emailHref: "mailto:infoexperienceforall@gmail.ro",
+  phoneDisplay: "+40 755 011 497",
+  phoneHref: "tel:+40755011497",
+  whatsappHref:
+    "https://wa.me/40755011497?text=" +
+    encodeURIComponent(
+      "Bună, Experience for All! Aș dori mai multe informații despre proiectul vostru.",
+    ),
+};
+
 
 export type ExperienceCategory =
   | "Apă"
