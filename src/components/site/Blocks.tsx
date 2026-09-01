@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/site/Logo";
 
 export function Section({
   children,
@@ -146,7 +147,10 @@ export function FinalCTA() {
     <section className="gradient-depth text-cream">
       <div className="container-page py-24 text-center md:py-32">
         <Reveal>
-          <p className="text-eyebrow text-cream/70">Final</p>
+          <div className="flex justify-center">
+            <Logo onDark className="h-10 w-auto" />
+          </div>
+          <p className="text-eyebrow mt-8 text-cream/70">Final</p>
           <h2 className="display-lg mx-auto mt-5 max-w-3xl">
             Ce experiență putem crea împreună?
           </h2>
