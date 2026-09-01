@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/site/Logo";
+import { ContactInline } from "@/components/site/ContactInline";
 
 export function Section({
   children,
