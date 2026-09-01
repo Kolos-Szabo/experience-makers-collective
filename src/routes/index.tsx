@@ -5,6 +5,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Section, SectionHeading, FinalCTA } from "@/components/site/Blocks";
 import { PartnersGrid } from "@/components/site/Partners";
+import { GalleryGrid } from "@/components/site/GalleryGrid";
+import { getFeaturedPhotos } from "@/data/gallery";
 import {
   images,
   experiences,
