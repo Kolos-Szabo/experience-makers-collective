@@ -36,9 +36,23 @@ export function SimpleForm({
       toast.error("Este necesar acordul privind prelucrarea datelor.");
       return;
     }
+
+    const data = new FormData(e.currentTarget);
+    const lines = fields.map((f) => {
+      const value = String(data.get(f.name) ?? "").trim();
+      return `${f.label}: ${value || "-"}`;
+    });
+    lines.push("", "Acord prelucrare date: DA", `Formular: ${formName}`);
+
+    const subject = `[Website] ${formName}`;
+    const href = `${contact.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      lines.join("\n"),
+    )}`;
+
+    window.location.href = href;
     setSent(true);
-    toast.success("Îți mulțumim! Formularul a fost completat.", {
-      description: `Trimiterea automată nu este încă activată. Deocamdată ne poți scrie direct la ${contact.email} sau ne poți suna la ${contact.phoneDisplay}.`,
+    toast.success("Mesajul tău este pregătit pentru trimitere.", {
+      description: `S-a deschis aplicația ta de e-mail cu datele completate. Apasă „Trimite”. Alternativ, ne poți suna la ${contact.phoneDisplay}.`,
     });
   }
 
