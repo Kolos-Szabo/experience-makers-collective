@@ -169,7 +169,10 @@ export function FinalCTA() {
               <Link to="/implica-te/parteneri">Devino partener</Link>
             </Button>
           </div>
+          <p className="mt-8 text-sm text-cream/70">Ai întrebări înainte să te implici?</p>
+          <ContactInline invert className="mt-1 justify-center" />
         </Reveal>
+
       </div>
     </section>
   );
