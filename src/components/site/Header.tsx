@@ -104,6 +104,21 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={contact.phoneHref}
+            aria-label="Sună Experience for All"
+            className="hidden items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground lg:inline-flex"
+          >
+            <Phone className="size-4" aria-hidden="true" />
+            {contact.phoneDisplay}
+          </a>
+          <a
+            href={contact.emailHref}
+            aria-label="Trimite un e-mail către Experience for All"
+            className="hidden size-10 items-center justify-center rounded-md border border-border text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground lg:inline-flex"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+          </a>
           <Button asChild variant="cta" size="sm" className="hidden sm:inline-flex">
             <Link to="/implica-te/doneaza">Donează</Link>
           </Button>
