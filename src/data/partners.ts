@@ -54,4 +54,5 @@ export const partners: Partner[] = [
   { name: "Milbon – The Blooming Studio", logo: milbonLogo.url },
   { name: "D4ti Barber Shop", logo: d4tiBarberShopLogo.url },
   { name: "Happy Kids Park", logo: happyKidsParkLogo.url, wide: true },
+  { name: "Wolf Adventures", logo: wolfAdventuresLogo.url },
 ];
