@@ -147,7 +147,9 @@ export function FinalCTA() {
     <section className="gradient-depth text-cream">
       <div className="container-page py-24 text-center md:py-32">
         <Reveal>
-          <Logo onDark className="mx-auto h-10 w-auto" />
+          <div className="flex justify-center">
+            <Logo onDark className="h-10 w-auto" />
+          </div>
           <p className="text-eyebrow mt-8 text-cream/70">Final</p>
           <h2 className="display-lg mx-auto mt-5 max-w-3xl">
             Ce experiență putem crea împreună?
