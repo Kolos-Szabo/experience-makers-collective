@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { org } from "@/data/site";
+import { Logo } from "@/components/site/Logo";
 
 const columns = [
   {
@@ -37,9 +38,7 @@ export function Footer() {
     <footer className="mt-24 border-t border-border bg-forest-deep text-cream">
       <div className="container-page grid gap-12 py-16 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <p className="font-display text-lg font-extrabold uppercase tracking-[0.14em]">
-            Experience for All
-          </p>
+          <Logo onDark className="h-10 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/75">
             Fiecare copil merită șansa de a trăi experiențe extraordinare, de a învăța prin ele și
             de a descoperi de ce este capabil.

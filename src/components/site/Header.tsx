@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/site/Logo";
 
 const mainNav = [
   { to: "/despre", label: "Despre" },
@@ -38,13 +39,13 @@ export function Header() {
         Sari la conținut
       </a>
       <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
-        <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-display text-base font-extrabold uppercase tracking-[0.14em] text-primary">
-            Experience
-          </span>
-          <span className="font-display text-base font-extrabold uppercase tracking-[0.14em] text-foreground">
-            for All
-          </span>
+        <Link
+          to="/"
+          aria-label="Experience for All — pagina principală"
+          className="flex shrink-0 items-center py-2 pr-2"
+          onClick={() => setOpen(false)}
+        >
+          <Logo className="h-8 w-auto md:h-9 lg:h-10" />
         </Link>
 
         <nav aria-label="Navigație principală" className="hidden items-center gap-1 xl:flex">
