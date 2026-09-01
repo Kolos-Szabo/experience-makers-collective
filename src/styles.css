@@ -6,8 +6,8 @@
 
 /*
  * Experience for All — design system
- * Palette: forest green, deep blue, natural cream, warm sand, charcoal,
- * sunrise accent (reserved for CTAs and key emphasis).
+ * Brand palette (only these four colors, plus opacity/mixes of them):
+ * #087E8B deep teal · #4CB7C5 light turquoise · #F8F6F0 warm off-white · #263238 graphite.
  */
 
 @theme inline {
@@ -71,80 +71,80 @@
 :root {
   --radius: 0.375rem;
 
-  --cream: oklch(0.972 0.012 92);
-  --sand: oklch(0.918 0.031 82);
-  --charcoal: oklch(0.238 0.014 145);
-  --forest: oklch(0.402 0.072 155);
-  --forest-deep: oklch(0.284 0.052 158);
-  --ocean: oklch(0.436 0.083 240);
-  --ocean-deep: oklch(0.302 0.062 245);
-  --sunrise: oklch(0.702 0.171 48);
-  --sunrise-foreground: oklch(0.198 0.03 40);
+  --cream: #f8f6f0;
+  --sand: color-mix(in srgb, #4cb7c5 16%, #f8f6f0);
+  --charcoal: #263238;
+  --forest: #087e8b;
+  --forest-deep: color-mix(in srgb, #087e8b 55%, #263238);
+  --ocean: #4cb7c5;
+  --ocean-deep: color-mix(in srgb, #087e8b 72%, #263238);
+  --sunrise: #4cb7c5;
+  --sunrise-foreground: #263238;
 
-  --background: var(--cream);
+  --background: color-mix(in srgb, #4cb7c5 6%, #f8f6f0);
   --foreground: var(--charcoal);
-  --card: oklch(0.995 0.006 92);
+  --card: #f8f6f0;
   --card-foreground: var(--charcoal);
-  --popover: oklch(0.995 0.006 92);
+  --popover: #f8f6f0;
   --popover-foreground: var(--charcoal);
   --primary: var(--forest);
-  --primary-foreground: oklch(0.982 0.01 92);
-  --secondary: var(--sand);
+  --primary-foreground: #f8f6f0;
+  --secondary: color-mix(in srgb, #4cb7c5 20%, #f8f6f0);
   --secondary-foreground: var(--forest-deep);
-  --muted: oklch(0.941 0.017 88);
-  --muted-foreground: oklch(0.468 0.018 130);
-  --accent: var(--sunrise);
-  --accent-foreground: var(--sunrise-foreground);
-  --destructive: oklch(0.552 0.196 27);
-  --destructive-foreground: oklch(0.985 0.005 92);
-  --border: oklch(0.882 0.019 88);
-  --input: oklch(0.882 0.019 88);
+  --muted: color-mix(in srgb, #4cb7c5 12%, #f8f6f0);
+  --muted-foreground: color-mix(in srgb, #263238 68%, #f8f6f0);
+  --accent: var(--ocean);
+  --accent-foreground: var(--charcoal);
+  --destructive: var(--charcoal);
+  --destructive-foreground: #f8f6f0;
+  --border: color-mix(in srgb, #4cb7c5 32%, #f8f6f0);
+  --input: color-mix(in srgb, #4cb7c5 34%, #f8f6f0);
   --ring: var(--forest);
 
   --chart-1: var(--forest);
   --chart-2: var(--ocean);
-  --chart-3: var(--sunrise);
+  --chart-3: var(--forest-deep);
   --chart-4: var(--sand);
-  --chart-5: var(--forest-deep);
+  --chart-5: var(--ocean-deep);
 
-  --sidebar: var(--cream);
+  --sidebar: #f8f6f0;
   --sidebar-foreground: var(--charcoal);
   --sidebar-primary: var(--forest);
-  --sidebar-primary-foreground: oklch(0.982 0.01 92);
-  --sidebar-accent: var(--sand);
+  --sidebar-primary-foreground: #f8f6f0;
+  --sidebar-accent: color-mix(in srgb, #4cb7c5 20%, #f8f6f0);
   --sidebar-accent-foreground: var(--forest-deep);
-  --sidebar-border: oklch(0.882 0.019 88);
+  --sidebar-border: color-mix(in srgb, #4cb7c5 32%, #f8f6f0);
   --sidebar-ring: var(--forest);
 
-  --shadow-soft: 0 1px 2px oklch(0.238 0.014 145 / 0.05), 0 12px 32px -18px oklch(0.238 0.014 145 / 0.35);
-  --shadow-lift: 0 2px 4px oklch(0.238 0.014 145 / 0.06), 0 28px 60px -30px oklch(0.238 0.014 145 / 0.45);
-  --gradient-depth: linear-gradient(160deg, var(--forest-deep), var(--ocean-deep));
+  --shadow-soft: 0 1px 2px rgb(38 50 56 / 0.05), 0 12px 32px -18px rgb(38 50 56 / 0.3);
+  --shadow-lift: 0 2px 4px rgb(38 50 56 / 0.06), 0 28px 60px -30px rgb(38 50 56 / 0.4);
+  --gradient-depth: linear-gradient(160deg, var(--ocean-deep), var(--forest));
   --overlay-image: linear-gradient(
     180deg,
-    oklch(0.238 0.014 145 / 0.62) 0%,
-    oklch(0.238 0.014 145 / 0.28) 45%,
-    oklch(0.238 0.014 145 / 0.78) 100%
+    rgb(38 50 56 / 0.66) 0%,
+    rgb(38 50 56 / 0.3) 45%,
+    rgb(38 50 56 / 0.8) 100%
   );
 }
 
 .dark {
-  --background: oklch(0.192 0.018 155);
-  --foreground: oklch(0.958 0.012 92);
-  --card: oklch(0.232 0.022 155);
-  --card-foreground: oklch(0.958 0.012 92);
-  --popover: oklch(0.232 0.022 155);
-  --popover-foreground: oklch(0.958 0.012 92);
-  --primary: oklch(0.712 0.098 155);
-  --primary-foreground: oklch(0.182 0.02 155);
-  --secondary: oklch(0.292 0.024 130);
-  --secondary-foreground: oklch(0.958 0.012 92);
-  --muted: oklch(0.282 0.02 150);
-  --muted-foreground: oklch(0.742 0.018 120);
-  --accent: var(--sunrise);
-  --accent-foreground: oklch(0.182 0.02 40);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.712 0.098 155);
+  --background: #263238;
+  --foreground: #f8f6f0;
+  --card: color-mix(in srgb, #087e8b 18%, #263238);
+  --card-foreground: #f8f6f0;
+  --popover: color-mix(in srgb, #087e8b 18%, #263238);
+  --popover-foreground: #f8f6f0;
+  --primary: #4cb7c5;
+  --primary-foreground: #263238;
+  --secondary: color-mix(in srgb, #087e8b 30%, #263238);
+  --secondary-foreground: #f8f6f0;
+  --muted: color-mix(in srgb, #087e8b 22%, #263238);
+  --muted-foreground: color-mix(in srgb, #f8f6f0 72%, #263238);
+  --accent: #4cb7c5;
+  --accent-foreground: #263238;
+  --border: color-mix(in srgb, #4cb7c5 24%, #263238);
+  --input: color-mix(in srgb, #4cb7c5 28%, #263238);
+  --ring: #4cb7c5;
 }
 
 @layer base {
@@ -181,8 +181,8 @@
   }
 
   ::selection {
-    background: var(--sunrise);
-    color: var(--sunrise-foreground);
+    background: var(--ocean);
+    color: var(--charcoal);
   }
 }
 
