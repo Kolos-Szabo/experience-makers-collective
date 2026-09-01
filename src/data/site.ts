@@ -462,28 +462,4 @@ export const donationUses = [
   "dezvoltarea programului",
 ];
 
-export const galleryCategories = [
-  "Scufundări",
-  "Apă",
-  "Aventură",
-  "Natură",
-  "Tabere",
-  "Voluntari",
-  "Învățare",
-  "Reflecție",
-  "În culise",
-];
-
-export const gallery = [
-  { src: images.heroWater, alt: "Grup de adolescenți cu veste de salvare pe o plută de lemn, pe un lac înconjurat de dealuri împădurite", category: "Apă" },
-  { src: images.expDiving, alt: "Scafandri cu echipament complet, pregătindu-se în apă lângă un ponton", category: "Scufundări" },
-  { src: images.diveSurface, alt: "Doi scafandri la suprafața lacului, verificând echipamentul lângă un reper", category: "Scufundări" },
-  { src: images.expKayak, alt: "Inițiere în scufundări într-o piscină, cu instructori alături de participanți", category: "Apă" },
-  { src: images.expClimbing, alt: "Copil care urcă pe un perete de escaladă, asigurat de doi instructori", category: "Aventură" },
-  { src: images.expCamp, alt: "Grup într-o căruță trasă de cai, pe un drum forestier", category: "Tabere" },
-  { src: images.expNature, alt: "Grup și mașini de teren pe o creastă montană însorită", category: "Natură" },
-  { src: images.expEducation, alt: "Copii într-o sală de școală, ridicând mâinile în timpul unui atelier", category: "Învățare" },
-  { src: images.community, alt: "Mașini de teren pline de noroi, parcate la marginea pădurii înainte de o experiență", category: "Voluntari" },
-  { src: images.brandToken, alt: "Medalion metalic gravat cu textul Experience for All", category: "În culise" },
-];
 

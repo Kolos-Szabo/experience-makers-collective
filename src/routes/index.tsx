@@ -5,6 +5,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Section, SectionHeading, FinalCTA } from "@/components/site/Blocks";
 import { PartnersGrid } from "@/components/site/Partners";
+import { GalleryGrid } from "@/components/site/GalleryGrid";
+import { getFeaturedPhotos } from "@/data/gallery";
 import {
   images,
   experiences,
@@ -472,6 +474,27 @@ function HomePage() {
         />
         <div className="mx-auto mt-12 max-w-5xl">
           <PartnersGrid />
+        </div>
+      </Section>
+
+      {/* 12 — GALERIE */}
+      <Section>
+        <SectionHeading
+          eyebrow="Galerie"
+          title="Experiențe care rămân în amintire"
+          intro="Fotografii reale din apă, din tabere și de pe traseu — momente trăite de copiii și voluntarii programului."
+          align="center"
+        />
+        <div className="mt-12">
+          <GalleryGrid photos={getFeaturedPhotos(6)} showFilters={false} />
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Button asChild size="lg">
+            <Link to="/galerie">
+              Vezi toate fotografiile
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
         </div>
       </Section>
 
