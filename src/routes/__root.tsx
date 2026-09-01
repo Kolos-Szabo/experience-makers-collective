@@ -114,13 +114,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description:
             "Program social și educațional care creează experiențe outdoor și oportunități de educație non-formală pentru copii și adolescenți din sistemul de protecție a copilului din județul Covasna.",
           areaServed: "Covasna, România",
-          email: "infoexperienceforall@gmail.ro",
+          email: "infoexperienceforall@gmail.com",
           telephone: "+40755011497",
           contactPoint: [
             {
               "@type": "ContactPoint",
               contactType: "customer support",
-              email: "infoexperienceforall@gmail.ro",
+              email: "infoexperienceforall@gmail.com",
               telephone: "+40755011497",
               availableLanguage: ["ro", "hu", "en"],
             },
