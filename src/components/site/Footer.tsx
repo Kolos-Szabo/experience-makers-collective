@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { org } from "@/data/site";
+import { Mail, Phone, MessageCircle } from "lucide-react";
+import { org, contact } from "@/data/site";
 import { Logo } from "@/components/site/Logo";
 
 const columns = [
