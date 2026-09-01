@@ -101,6 +101,10 @@ export function SimpleForm({
           ? "Formular completat. Conectarea la sistemul de trimitere urmează să fie configurată."
           : "Câmpurile marcate cu * sunt obligatorii."}
       </p>
+      <div className="mt-6 border-t border-border pt-4">
+        <p className="text-sm text-muted-foreground">Preferi să ne scrii direct?</p>
+        <ContactInline className="-ml-3 mt-1" />
+      </div>
     </form>
   );
 }
