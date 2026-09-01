@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
 import { Button } from "@/components/ui/button";
-import { org, contact } from "@/data/site";
+import { contact } from "@/data/site";
 
 export const Route = createFileRoute("/legal/protectia-copilului")({
   head: () => ({
