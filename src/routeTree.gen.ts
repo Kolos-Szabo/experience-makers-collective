@@ -10,11 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CumInvatamRouteImport } from './routes/cum-invatam'
 import { Route as DespreRouteImport } from './routes/despre'
 import { Route as EvenimenteRouteImport } from './routes/evenimente'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as ResurseRouteImport } from './routes/resurse'
+import { Route as SigurantaRouteImport } from './routes/siguranta'
+import { Route as TransparentaRouteImport } from './routes/transparenta'
 import { Route as ExperienteIndexRouteImport } from './routes/experiente.index'
 import { Route as ExperienteSlugRouteImport } from './routes/experiente.$slug'
 import { Route as ImplicaTeIndexRouteImport } from './routes/implica-te.index'
@@ -28,6 +32,11 @@ import { Route as PovestiSlugRouteImport } from './routes/povesti.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CumInvatamRoute = CumInvatamRouteImport.update({
@@ -53,6 +62,21 @@ const GalerieRoute = GalerieRouteImport.update({
 const ImpactRoute = ImpactRouteImport.update({
   id: '/impact',
   path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResurseRoute = ResurseRouteImport.update({
+  id: '/resurse',
+  path: '/resurse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigurantaRoute = SigurantaRouteImport.update({
+  id: '/siguranta',
+  path: '/siguranta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransparentaRoute = TransparentaRouteImport.update({
+  id: '/transparenta',
+  path: '/transparenta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperienteIndexRoute = ExperienteIndexRouteImport.update({
@@ -104,11 +128,15 @@ const PovestiSlugRoute = PovestiSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/resurse': typeof ResurseRoute
+  '/siguranta': typeof SigurantaRoute
+  '/transparenta': typeof TransparentaRoute
   '/experiente/$slug': typeof ExperienteSlugRoute
   '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
@@ -121,11 +149,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/resurse': typeof ResurseRoute
+  '/siguranta': typeof SigurantaRoute
+  '/transparenta': typeof TransparentaRoute
   '/experiente/$slug': typeof ExperienteSlugRoute
   '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
@@ -139,11 +171,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/resurse': typeof ResurseRoute
+  '/siguranta': typeof SigurantaRoute
+  '/transparenta': typeof TransparentaRoute
   '/experiente/$slug': typeof ExperienteSlugRoute
   '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
@@ -158,11 +194,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/cum-invatam'
     | '/despre'
     | '/evenimente'
     | '/galerie'
     | '/impact'
+    | '/resurse'
+    | '/siguranta'
+    | '/transparenta'
     | '/experiente/$slug'
     | '/implica-te/doneaza'
     | '/implica-te/ofera-o-experienta'
@@ -175,11 +215,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/cum-invatam'
     | '/despre'
     | '/evenimente'
     | '/galerie'
     | '/impact'
+    | '/resurse'
+    | '/siguranta'
+    | '/transparenta'
     | '/experiente/$slug'
     | '/implica-te/doneaza'
     | '/implica-te/ofera-o-experienta'
@@ -192,11 +236,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/cum-invatam'
     | '/despre'
     | '/evenimente'
     | '/galerie'
     | '/impact'
+    | '/resurse'
+    | '/siguranta'
+    | '/transparenta'
     | '/experiente/$slug'
     | '/implica-te/doneaza'
     | '/implica-te/ofera-o-experienta'
@@ -210,11 +258,15 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   CumInvatamRoute: typeof CumInvatamRoute
   DespreRoute: typeof DespreRoute
   EvenimenteRoute: typeof EvenimenteRoute
   GalerieRoute: typeof GalerieRoute
   ImpactRoute: typeof ImpactRoute
+  ResurseRoute: typeof ResurseRoute
+  SigurantaRoute: typeof SigurantaRoute
+  TransparentaRoute: typeof TransparentaRoute
   ExperienteSlugRoute: typeof ExperienteSlugRoute
   ImplicaTeDoneazaRoute: typeof ImplicaTeDoneazaRoute
   ImplicaTeOferaOExperientaRoute: typeof ImplicaTeOferaOExperientaRoute
@@ -233,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cum-invatam': {
@@ -268,6 +327,27 @@ declare module '@tanstack/react-router' {
       path: '/impact'
       fullPath: '/impact'
       preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resurse': {
+      id: '/resurse'
+      path: '/resurse'
+      fullPath: '/resurse'
+      preLoaderRoute: typeof ResurseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/siguranta': {
+      id: '/siguranta'
+      path: '/siguranta'
+      fullPath: '/siguranta'
+      preLoaderRoute: typeof SigurantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transparenta': {
+      id: '/transparenta'
+      path: '/transparenta'
+      fullPath: '/transparenta'
+      preLoaderRoute: typeof TransparentaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiente/': {
@@ -338,11 +418,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   CumInvatamRoute: CumInvatamRoute,
   DespreRoute: DespreRoute,
   EvenimenteRoute: EvenimenteRoute,
   GalerieRoute: GalerieRoute,
   ImpactRoute: ImpactRoute,
+  ResurseRoute: ResurseRoute,
+  SigurantaRoute: SigurantaRoute,
+  TransparentaRoute: TransparentaRoute,
   ExperienteSlugRoute: ExperienteSlugRoute,
   ImplicaTeDoneazaRoute: ImplicaTeDoneazaRoute,
   ImplicaTeOferaOExperientaRoute: ImplicaTeOferaOExperientaRoute,
