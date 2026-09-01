@@ -26,6 +26,10 @@ import { Route as ImplicaTeDoneazaRouteImport } from './routes/implica-te.doneaz
 import { Route as ImplicaTeOferaOExperientaRouteImport } from './routes/implica-te.ofera-o-experienta'
 import { Route as ImplicaTeParteneriRouteImport } from './routes/implica-te.parteneri'
 import { Route as ImplicaTeVoluntariatRouteImport } from './routes/implica-te.voluntariat'
+import { Route as LegalConfidentialitateRouteImport } from './routes/legal.confidentialitate'
+import { Route as LegalCookiesRouteImport } from './routes/legal.cookies'
+import { Route as LegalGdprRouteImport } from './routes/legal.gdpr'
+import { Route as LegalProtectiaCopiluluiRouteImport } from './routes/legal.protectia-copilului'
 import { Route as PovestiIndexRouteImport } from './routes/povesti.index'
 import { Route as PovestiSlugRouteImport } from './routes/povesti.$slug'
 
@@ -115,6 +119,26 @@ const ImplicaTeVoluntariatRoute = ImplicaTeVoluntariatRouteImport.update({
   path: '/implica-te/voluntariat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LegalConfidentialitateRoute = LegalConfidentialitateRouteImport.update({
+  id: '/legal/confidentialitate',
+  path: '/legal/confidentialitate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalCookiesRoute = LegalCookiesRouteImport.update({
+  id: '/legal/cookies',
+  path: '/legal/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalGdprRoute = LegalGdprRouteImport.update({
+  id: '/legal/gdpr',
+  path: '/legal/gdpr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalProtectiaCopiluluiRoute = LegalProtectiaCopiluluiRouteImport.update({
+  id: '/legal/protectia-copilului',
+  path: '/legal/protectia-copilului',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PovestiIndexRoute = PovestiIndexRouteImport.update({
   id: '/povesti/',
   path: '/povesti/',
@@ -142,6 +166,10 @@ export interface FileRoutesByFullPath {
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
   '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
   '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/legal/confidentialitate': typeof LegalConfidentialitateRoute
+  '/legal/cookies': typeof LegalCookiesRoute
+  '/legal/gdpr': typeof LegalGdprRoute
+  '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
   '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente/': typeof ExperienteIndexRoute
   '/implica-te/': typeof ImplicaTeIndexRoute
@@ -163,6 +191,10 @@ export interface FileRoutesByTo {
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
   '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
   '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/legal/confidentialitate': typeof LegalConfidentialitateRoute
+  '/legal/cookies': typeof LegalCookiesRoute
+  '/legal/gdpr': typeof LegalGdprRoute
+  '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
   '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente': typeof ExperienteIndexRoute
   '/implica-te': typeof ImplicaTeIndexRoute
@@ -185,6 +217,10 @@ export interface FileRoutesById {
   '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
   '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
   '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/legal/confidentialitate': typeof LegalConfidentialitateRoute
+  '/legal/cookies': typeof LegalCookiesRoute
+  '/legal/gdpr': typeof LegalGdprRoute
+  '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
   '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente/': typeof ExperienteIndexRoute
   '/implica-te/': typeof ImplicaTeIndexRoute
@@ -208,6 +244,10 @@ export interface FileRouteTypes {
     | '/implica-te/ofera-o-experienta'
     | '/implica-te/parteneri'
     | '/implica-te/voluntariat'
+    | '/legal/confidentialitate'
+    | '/legal/cookies'
+    | '/legal/gdpr'
+    | '/legal/protectia-copilului'
     | '/povesti/$slug'
     | '/experiente/'
     | '/implica-te/'
@@ -229,6 +269,10 @@ export interface FileRouteTypes {
     | '/implica-te/ofera-o-experienta'
     | '/implica-te/parteneri'
     | '/implica-te/voluntariat'
+    | '/legal/confidentialitate'
+    | '/legal/cookies'
+    | '/legal/gdpr'
+    | '/legal/protectia-copilului'
     | '/povesti/$slug'
     | '/experiente'
     | '/implica-te'
@@ -250,6 +294,10 @@ export interface FileRouteTypes {
     | '/implica-te/ofera-o-experienta'
     | '/implica-te/parteneri'
     | '/implica-te/voluntariat'
+    | '/legal/confidentialitate'
+    | '/legal/cookies'
+    | '/legal/gdpr'
+    | '/legal/protectia-copilului'
     | '/povesti/$slug'
     | '/experiente/'
     | '/implica-te/'
@@ -272,6 +320,10 @@ export interface RootRouteChildren {
   ImplicaTeOferaOExperientaRoute: typeof ImplicaTeOferaOExperientaRoute
   ImplicaTeParteneriRoute: typeof ImplicaTeParteneriRoute
   ImplicaTeVoluntariatRoute: typeof ImplicaTeVoluntariatRoute
+  LegalConfidentialitateRoute: typeof LegalConfidentialitateRoute
+  LegalCookiesRoute: typeof LegalCookiesRoute
+  LegalGdprRoute: typeof LegalGdprRoute
+  LegalProtectiaCopiluluiRoute: typeof LegalProtectiaCopiluluiRoute
   PovestiSlugRoute: typeof PovestiSlugRoute
   ExperienteIndexRoute: typeof ExperienteIndexRoute
   ImplicaTeIndexRoute: typeof ImplicaTeIndexRoute
@@ -399,6 +451,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImplicaTeVoluntariatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/legal/confidentialitate': {
+      id: '/legal/confidentialitate'
+      path: '/legal/confidentialitate'
+      fullPath: '/legal/confidentialitate'
+      preLoaderRoute: typeof LegalConfidentialitateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/cookies': {
+      id: '/legal/cookies'
+      path: '/legal/cookies'
+      fullPath: '/legal/cookies'
+      preLoaderRoute: typeof LegalCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/gdpr': {
+      id: '/legal/gdpr'
+      path: '/legal/gdpr'
+      fullPath: '/legal/gdpr'
+      preLoaderRoute: typeof LegalGdprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/protectia-copilului': {
+      id: '/legal/protectia-copilului'
+      path: '/legal/protectia-copilului'
+      fullPath: '/legal/protectia-copilului'
+      preLoaderRoute: typeof LegalProtectiaCopiluluiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/povesti/': {
       id: '/povesti/'
       path: '/povesti'
@@ -432,6 +512,10 @@ const rootRouteChildren: RootRouteChildren = {
   ImplicaTeOferaOExperientaRoute: ImplicaTeOferaOExperientaRoute,
   ImplicaTeParteneriRoute: ImplicaTeParteneriRoute,
   ImplicaTeVoluntariatRoute: ImplicaTeVoluntariatRoute,
+  LegalConfidentialitateRoute: LegalConfidentialitateRoute,
+  LegalCookiesRoute: LegalCookiesRoute,
+  LegalGdprRoute: LegalGdprRoute,
+  LegalProtectiaCopiluluiRoute: LegalProtectiaCopiluluiRoute,
   PovestiSlugRoute: PovestiSlugRoute,
   ExperienteIndexRoute: ExperienteIndexRoute,
   ImplicaTeIndexRoute: ImplicaTeIndexRoute,
