@@ -105,6 +105,14 @@ function DonatePage() {
                 <Link to="/implica-te/parteneri">Devino partener</Link>
               </Button>
             </Reveal>
+
+            <Reveal className="surface-card p-7" delay={220}>
+              <h2 className="text-xl font-bold">Ai întrebări despre donații?</h2>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Îți explicăm exact unde ajunge contribuția ta. Scrie-ne sau sună-ne.
+              </p>
+              <ContactInline className="-ml-3 mt-4" />
+            </Reveal>
           </aside>
         </div>
       </Section>
