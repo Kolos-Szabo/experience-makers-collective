@@ -52,20 +52,47 @@ function ContactPage() {
           <div className="space-y-6">
             <Reveal className="surface-card p-7">
               <h2 className="text-xl font-bold">Date de contact</h2>
-              <dl className="mt-5 space-y-3 text-sm">
+              <address className="mt-5 space-y-4 text-sm not-italic">
                 <div>
-                  <dt className="text-muted-foreground">E-mail</dt>
-                  <dd className="font-medium">{org.email}</dd>
+                  <p className="text-muted-foreground">E-mail</p>
+                  <a
+                    href={contact.emailHref}
+                    aria-label="Trimite un e-mail către Experience for All"
+                    className="mt-1 inline-flex items-center gap-2 font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    <Mail className="size-4" aria-hidden="true" />
+                    {contact.email}
+                  </a>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground">Telefon</dt>
-                  <dd className="font-medium">{org.phone}</dd>
+                  <p className="text-muted-foreground">Telefon</p>
+                  <a
+                    href={contact.phoneHref}
+                    aria-label="Sună Experience for All"
+                    className="mt-1 inline-flex items-center gap-2 font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    <Phone className="size-4" aria-hidden="true" />
+                    {contact.phoneDisplay}
+                  </a>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground">Zonă de activitate</dt>
-                  <dd className="font-medium">{org.county}</dd>
+                  <p className="text-muted-foreground">WhatsApp</p>
+                  <a
+                    href={contact.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Contactează Experience for All pe WhatsApp"
+                    className="mt-1 inline-flex items-center gap-2 font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    <MessageCircle className="size-4" aria-hidden="true" />
+                    Scrie-ne pe WhatsApp
+                  </a>
                 </div>
-              </dl>
+                <div>
+                  <p className="text-muted-foreground">Zonă de activitate</p>
+                  <p className="mt-1 font-medium">{org.county}</p>
+                </div>
+              </address>
             </Reveal>
             <Reveal className="surface-card p-7" delay={80}>
               <h2 className="text-xl font-bold">Cui ne adresăm</h2>
