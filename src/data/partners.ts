@@ -17,6 +17,7 @@ import roviLogo from "@/assets/partener-rovi.png.asset.json";
 import teamAdventureLogo from "@/assets/partener-team-adventure.png.asset.json";
 import visitCovasnaLogo from "@/assets/partener-visit-covasna.png.asset.json";
 import wsaGroupLogo from "@/assets/partener-wsa-group.png.asset.json";
+import wolfAdventuresLogo from "@/assets/partener-wolf-adventures.png.asset.json";
 import zamatLogo from "@/assets/partener-zamat-cafenea.png.asset.json";
 
 export type Partner = {
@@ -53,4 +54,5 @@ export const partners: Partner[] = [
   { name: "Milbon – The Blooming Studio", logo: milbonLogo.url },
   { name: "D4ti Barber Shop", logo: d4tiBarberShopLogo.url },
   { name: "Happy Kids Park", logo: happyKidsParkLogo.url, wide: true },
+  { name: "Wolf Adventures", logo: wolfAdventuresLogo.url },
 ];
