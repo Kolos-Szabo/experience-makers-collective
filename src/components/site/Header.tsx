@@ -108,7 +108,7 @@ export function Header() {
           <a
             href={contact.phoneHref}
             aria-label="Sună Experience for All"
-            className="hidden items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground lg:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground xl:inline-flex"
           >
             <Phone className="size-4" aria-hidden="true" />
             {contact.phoneDisplay}
@@ -116,7 +116,7 @@ export function Header() {
           <a
             href={contact.emailHref}
             aria-label="Trimite un e-mail către Experience for All"
-            className="hidden size-10 items-center justify-center rounded-md border border-border text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground lg:inline-flex"
+            className="hidden size-10 items-center justify-center rounded-md border border-border text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground sm:inline-flex"
           >
             <Mail className="size-4" aria-hidden="true" />
           </a>
