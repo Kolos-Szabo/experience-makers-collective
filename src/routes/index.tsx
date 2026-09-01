@@ -475,6 +475,27 @@ function HomePage() {
         </div>
       </Section>
 
+      {/* 12 — GALERIE */}
+      <Section>
+        <SectionHeading
+          eyebrow="Galerie"
+          title="Experiențe care rămân în amintire"
+          intro="Fotografii reale din apă, din tabere și de pe traseu — momente trăite de copiii și voluntarii programului."
+          align="center"
+        />
+        <div className="mt-12">
+          <GalleryGrid photos={getFeaturedPhotos(6)} showFilters={false} />
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Button asChild size="lg">
+            <Link to="/galerie">
+              Vezi toate fotografiile
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
+        </div>
+      </Section>
+
       <FinalCTA />
     </>
   );
