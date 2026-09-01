@@ -46,12 +46,12 @@ const fields: Field[] = [
   { name: "telefon", label: "Telefon", type: "tel" },
   { name: "profesie", label: "Profesie / domeniu" },
   { name: "experienta", label: "Ce experiență oferi?", type: "textarea", required: true },
-  { name: "varsta", label: "Pentru ce vârstă este potrivită?" },
-  { name: "durata", label: "Durata estimată" },
-  { name: "locatie", label: "Locația" },
-  { name: "necesar", label: "Ce este necesar (echipament, spațiu, transport)?", full: true },
-  { name: "certificari", label: "Competențe / certificări" },
-  { name: "siguranta", label: "Condiții de siguranță", full: true },
+  {
+    name: "detalii",
+    label: "Detalii (vârstă potrivită, durată, locație, echipament necesar, condiții de siguranță)",
+    type: "textarea",
+    full: true,
+  },
   { name: "disponibilitate", label: "Disponibilitate" },
 ];
 
