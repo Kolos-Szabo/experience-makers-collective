@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CumInvatamRouteImport } from './routes/cum-invatam'
 import { Route as DespreRouteImport } from './routes/despre'
-import { Route as EvenimenteRouteImport } from './routes/evenimente'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as ResurseRouteImport } from './routes/resurse'
@@ -51,11 +50,6 @@ const CumInvatamRoute = CumInvatamRouteImport.update({
 const DespreRoute = DespreRouteImport.update({
   id: '/despre',
   path: '/despre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EvenimenteRoute = EvenimenteRouteImport.update({
-  id: '/evenimente',
-  path: '/evenimente',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalerieRoute = GalerieRouteImport.update({
@@ -155,7 +149,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
-  '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
   '/resurse': typeof ResurseRoute
@@ -180,7 +173,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
-  '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
   '/resurse': typeof ResurseRoute
@@ -206,7 +198,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
-  '/evenimente': typeof EvenimenteRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
   '/resurse': typeof ResurseRoute
@@ -233,7 +224,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cum-invatam'
     | '/despre'
-    | '/evenimente'
     | '/galerie'
     | '/impact'
     | '/resurse'
@@ -258,7 +248,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cum-invatam'
     | '/despre'
-    | '/evenimente'
     | '/galerie'
     | '/impact'
     | '/resurse'
@@ -283,7 +272,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cum-invatam'
     | '/despre'
-    | '/evenimente'
     | '/galerie'
     | '/impact'
     | '/resurse'
@@ -309,7 +297,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CumInvatamRoute: typeof CumInvatamRoute
   DespreRoute: typeof DespreRoute
-  EvenimenteRoute: typeof EvenimenteRoute
   GalerieRoute: typeof GalerieRoute
   ImpactRoute: typeof ImpactRoute
   ResurseRoute: typeof ResurseRoute
@@ -358,13 +345,6 @@ declare module '@tanstack/react-router' {
       path: '/despre'
       fullPath: '/despre'
       preLoaderRoute: typeof DespreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/evenimente': {
-      id: '/evenimente'
-      path: '/evenimente'
-      fullPath: '/evenimente'
-      preLoaderRoute: typeof EvenimenteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galerie': {
@@ -501,7 +481,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CumInvatamRoute: CumInvatamRoute,
   DespreRoute: DespreRoute,
-  EvenimenteRoute: EvenimenteRoute,
   GalerieRoute: GalerieRoute,
   ImpactRoute: ImpactRoute,
   ResurseRoute: ResurseRoute,
