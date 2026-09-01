@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { SimpleForm, type Field } from "@/components/site/SimpleForm";
-import { org } from "@/data/site";
+import { org, contact } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

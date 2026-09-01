@@ -36,8 +36,7 @@ export function SimpleForm({
     }
     setSent(true);
     toast.success("Îți mulțumim! Formularul a fost completat.", {
-      description:
-        "Trimiterea automată nu este încă activată. Deocamdată ne poți scrie direct la contact@experienceforall.ro.",
+      description: `Trimiterea automată nu este încă activată. Deocamdată ne poți scrie direct la ${contact.email} sau ne poți suna la ${contact.phoneDisplay}.`,
     });
   }
 
