@@ -10,7 +10,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
       loading="lazy"
       decoding="async"
       className={cn(
-        "max-h-12 w-auto max-w-[80%] object-contain transition-opacity duration-300 sm:max-h-14",
+        "max-h-14 w-auto max-w-[85%] object-contain transition-opacity duration-300 sm:max-h-16",
         partner.wide && "max-h-9 sm:max-h-10",
       )}
     />
