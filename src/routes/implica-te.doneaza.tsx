@@ -3,6 +3,7 @@ import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { donationUses, org, PLACEHOLDER } from "@/data/site";
+import { ContactInline } from "@/components/site/ContactInline";
 
 export const Route = createFileRoute("/implica-te/doneaza")({
   head: () => ({
