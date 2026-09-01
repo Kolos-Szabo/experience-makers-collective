@@ -55,7 +55,7 @@ function ResourcesPage() {
           {planned.map((p, i) => (
             <Reveal as="li" key={p} delay={i * 50} className="surface-card p-6">
               <p className="font-display font-bold capitalize">{p}</p>
-              <p className="mt-2 text-xs text-accent">{PLACEHOLDER}</p>
+              <p className="mt-2 text-xs font-medium text-primary">{PLACEHOLDER}</p>
             </Reveal>
           ))}
         </ul>

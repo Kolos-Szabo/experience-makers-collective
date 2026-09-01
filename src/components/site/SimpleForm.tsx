@@ -49,7 +49,7 @@ export function SimpleForm({
             <Label htmlFor={`${formName}-${f.name}`} className="mb-2 block text-sm font-medium">
               {f.label}
               {f.required && (
-                <span className="text-accent" aria-hidden="true">
+                <span className="text-primary" aria-hidden="true">
                   {" "}
                   *
                 </span>

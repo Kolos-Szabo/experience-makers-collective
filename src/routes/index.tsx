@@ -308,7 +308,7 @@ function HomePage() {
               delay={i * 70}
               className="rounded-xl border border-forest-deep/15 bg-cream/70 p-6"
             >
-              <p className="text-eyebrow text-forest">{label}</p>
+              <p className="text-eyebrow text-forest-deep">{label}</p>
               <p className="mt-3 text-base leading-relaxed">{line}</p>
             </Reveal>
           ))}

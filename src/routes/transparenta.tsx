@@ -69,7 +69,7 @@ function TransparencyPage() {
                 <li key={t}>
                   <p className="font-display font-bold">{t}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-                  <p className="mt-1 text-xs text-accent">{PLACEHOLDER}</p>
+                  <p className="mt-1 text-xs font-medium text-primary">{PLACEHOLDER}</p>
                 </li>
               ))}
             </ul>
