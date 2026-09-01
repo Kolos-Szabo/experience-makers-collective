@@ -41,8 +41,8 @@ function AboutPage() {
         eyebrow="Despre noi"
         title="Un program despre ce devine posibil când un copil primește șansa unei experiențe."
         intro={org.short}
-        image={images.expClimbing}
-        imageAlt="Escaladă pe perete de stâncă, într-o pădure"
+        image={images.expCamp}
+        imageAlt="Grup de copii și adulți într-o căruță trasă de cai, pe un drum forestier"
       />
 
       <Section>
