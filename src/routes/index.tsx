@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Section, SectionHeading, FinalCTA } from "@/components/site/Blocks";
+import { PartnersGrid } from "@/components/site/Partners";
 import {
   images,
   experiences,
@@ -458,6 +459,19 @@ function HomePage() {
               ))}
             </ol>
           </Reveal>
+        </div>
+      </Section>
+
+      {/* 11 — PARTENERI */}
+      <Section tone="muted">
+        <SectionHeading
+          eyebrow="Împreună"
+          title="Partenerii Experience for All"
+          intro="Organizații și echipe care fac posibile experiențele noastre — prin timp, expertiză, logistică sau resurse."
+          align="center"
+        />
+        <div className="mx-auto mt-12 max-w-5xl">
+          <PartnersGrid />
         </div>
       </Section>
 
