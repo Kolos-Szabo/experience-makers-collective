@@ -62,12 +62,13 @@ function PartnersPage() {
           <PartnersGrid className="mt-8" />
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div className="mt-16 max-w-2xl">
           <Reveal delay={100}>
             <h2 className="display-md mb-6">Devino partener</h2>
             <SimpleForm fields={fields} submitLabel="Trimite solicitarea" formName="parteneriat" />
           </Reveal>
         </div>
+
       </Section>
     </>
   );
