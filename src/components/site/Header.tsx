@@ -12,7 +12,6 @@ const mainNav = [
   { to: "/cum-invatam", label: "Cum învățăm" },
   { to: "/impact", label: "Impact" },
   { to: "/povesti", label: "Povești" },
-  { to: "/evenimente", label: "Evenimente" },
 ] as const;
 
 const involveNav = [
