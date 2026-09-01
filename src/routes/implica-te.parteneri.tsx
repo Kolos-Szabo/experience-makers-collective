@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { SimpleForm, type Field } from "@/components/site/SimpleForm";
-import { partnerContributions, PLACEHOLDER } from "@/data/site";
+import { partnerContributions } from "@/data/site";
+import { PartnersGrid } from "@/components/site/Partners";
 
 export const Route = createFileRoute("/implica-te/parteneri")({
   head: () => ({
@@ -53,19 +54,21 @@ function PartnersPage() {
           ))}
         </ul>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
-          <Reveal className="surface-card h-fit p-7">
-            <h2 className="text-xl font-bold">Parteneri actuali</h2>
-            <p className="mt-3 text-sm text-muted-foreground">
-              {PLACEHOLDER} — logo-urile și descrierile partenerilor se publică doar după acordul
-              fiecărei organizații.
-            </p>
-          </Reveal>
+        <div className="mt-16">
+          <h2 className="display-md">Partenerii Experience for All</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Organizații și echipe alături de care construim experiențele copiilor.
+          </p>
+          <PartnersGrid className="mt-8" />
+        </div>
+
+        <div className="mt-16 max-w-2xl">
           <Reveal delay={100}>
             <h2 className="display-md mb-6">Devino partener</h2>
             <SimpleForm fields={fields} submitLabel="Trimite solicitarea" formName="parteneriat" />
           </Reveal>
         </div>
+
       </Section>
     </>
   );
