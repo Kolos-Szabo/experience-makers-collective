@@ -4,14 +4,27 @@
  * placeholder-e. Nu adăuga date reale fără confirmare.
  */
 
-import heroWater from "@/assets/hero-water.jpg";
-import expDiving from "@/assets/exp-diving.jpg";
-import expKayak from "@/assets/exp-kayak.jpg";
-import expClimbing from "@/assets/exp-climbing.jpg";
-import expCamp from "@/assets/exp-camp.jpg";
-import expNature from "@/assets/exp-nature.jpg";
-import expEducation from "@/assets/exp-education.jpg";
-import community from "@/assets/community.jpg";
+import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
+import expDivingAsset from "@/assets/experience-for-all-scufundari-lac-instructori.jpg.asset.json";
+import expKayakAsset from "@/assets/experience-for-all-initiere-scufundari-piscina.jpg.asset.json";
+import expClimbingAsset from "@/assets/experience-for-all-escalada-copil-instructor.jpg.asset.json";
+import expCampAsset from "@/assets/experience-for-all-excursie-carute-padure.jpg.asset.json";
+import expNatureAsset from "@/assets/experience-for-all-creasta-montana-offroad.jpg.asset.json";
+import expEducationAsset from "@/assets/experience-for-all-atelier-scoala-copii.jpg.asset.json";
+import communityAsset from "@/assets/experience-for-all-voluntari-masini-offroad.jpg.asset.json";
+import diveSurfaceAsset from "@/assets/experience-for-all-scafandri-suprafata-lac.jpg.asset.json";
+import brandTokenAsset from "@/assets/experience-for-all-medalion-brand.jpg.asset.json";
+
+const heroWater = heroWaterAsset.url;
+const expDiving = expDivingAsset.url;
+const expKayak = expKayakAsset.url;
+const expClimbing = expClimbingAsset.url;
+const expCamp = expCampAsset.url;
+const expNature = expNatureAsset.url;
+const expEducation = expEducationAsset.url;
+const community = communityAsset.url;
+const diveSurface = diveSurfaceAsset.url;
+const brandToken = brandTokenAsset.url;
 
 export const images = {
   heroWater,
@@ -22,7 +35,10 @@ export const images = {
   expNature,
   expEducation,
   community,
+  diveSurface,
+  brandToken,
 };
+
 
 export const PLACEHOLDER = "[DE COMPLETAT]";
 
