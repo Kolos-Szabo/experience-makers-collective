@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { org } from "@/data/site";
+import { org, contact } from "@/data/site";
 
 export const Route = createFileRoute("/legal/gdpr")({
   head: () => ({

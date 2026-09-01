@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { org, PLACEHOLDER } from "@/data/site";
+import { org, contact, PLACEHOLDER } from "@/data/site";
 
 export const Route = createFileRoute("/legal/confidentialitate")({
   head: () => ({
