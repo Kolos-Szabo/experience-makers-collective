@@ -112,7 +112,7 @@ export function SimpleForm({
       </Button>
       <p className="mt-4 text-xs text-muted-foreground" role="status">
         {sent
-          ? "Formular completat. Conectarea la sistemul de trimitere urmează să fie configurată."
+          ? `Am deschis aplicația ta de e-mail cu mesajul completat către ${contact.email}. Dacă nu s-a deschis, scrie-ne direct la această adresă.`
           : "Câmpurile marcate cu * sunt obligatorii."}
       </p>
       <div className="mt-6 border-t border-border pt-4">
