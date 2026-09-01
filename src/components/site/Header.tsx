@@ -167,6 +167,23 @@ export function Header() {
               Donează
             </Link>
           </Button>
+          <p className="text-eyebrow px-3 pt-5 text-muted-foreground">Contact</p>
+          <a
+            href={contact.phoneHref}
+            aria-label="Sună Experience for All"
+            className="flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-foreground/85 hover:bg-secondary"
+          >
+            <Phone className="size-4" aria-hidden="true" />
+            {contact.phoneDisplay}
+          </a>
+          <a
+            href={contact.emailHref}
+            aria-label="Trimite un e-mail către Experience for All"
+            className="flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-foreground/85 hover:bg-secondary"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {contact.email}
+          </a>
         </nav>
       </div>
     </header>
