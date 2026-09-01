@@ -10,33 +10,220 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CumInvatamRouteImport } from './routes/cum-invatam'
+import { Route as DespreRouteImport } from './routes/despre'
+import { Route as EvenimenteRouteImport } from './routes/evenimente'
+import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as ExperienteIndexRouteImport } from './routes/experiente.index'
+import { Route as ExperienteSlugRouteImport } from './routes/experiente.$slug'
+import { Route as ImplicaTeIndexRouteImport } from './routes/implica-te.index'
+import { Route as ImplicaTeDoneazaRouteImport } from './routes/implica-te.doneaza'
+import { Route as ImplicaTeOferaOExperientaRouteImport } from './routes/implica-te.ofera-o-experienta'
+import { Route as ImplicaTeParteneriRouteImport } from './routes/implica-te.parteneri'
+import { Route as ImplicaTeVoluntariatRouteImport } from './routes/implica-te.voluntariat'
+import { Route as PovestiIndexRouteImport } from './routes/povesti.index'
+import { Route as PovestiSlugRouteImport } from './routes/povesti.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CumInvatamRoute = CumInvatamRouteImport.update({
+  id: '/cum-invatam',
+  path: '/cum-invatam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DespreRoute = DespreRouteImport.update({
+  id: '/despre',
+  path: '/despre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvenimenteRoute = EvenimenteRouteImport.update({
+  id: '/evenimente',
+  path: '/evenimente',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieRoute = GalerieRouteImport.update({
+  id: '/galerie',
+  path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienteIndexRoute = ExperienteIndexRouteImport.update({
+  id: '/experiente/',
+  path: '/experiente/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienteSlugRoute = ExperienteSlugRouteImport.update({
+  id: '/experiente/$slug',
+  path: '/experiente/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplicaTeIndexRoute = ImplicaTeIndexRouteImport.update({
+  id: '/implica-te/',
+  path: '/implica-te/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplicaTeDoneazaRoute = ImplicaTeDoneazaRouteImport.update({
+  id: '/implica-te/doneaza',
+  path: '/implica-te/doneaza',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplicaTeOferaOExperientaRoute =
+  ImplicaTeOferaOExperientaRouteImport.update({
+    id: '/implica-te/ofera-o-experienta',
+    path: '/implica-te/ofera-o-experienta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ImplicaTeParteneriRoute = ImplicaTeParteneriRouteImport.update({
+  id: '/implica-te/parteneri',
+  path: '/implica-te/parteneri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplicaTeVoluntariatRoute = ImplicaTeVoluntariatRouteImport.update({
+  id: '/implica-te/voluntariat',
+  path: '/implica-te/voluntariat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PovestiIndexRoute = PovestiIndexRouteImport.update({
+  id: '/povesti/',
+  path: '/povesti/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PovestiSlugRoute = PovestiSlugRouteImport.update({
+  id: '/povesti/$slug',
+  path: '/povesti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cum-invatam': typeof CumInvatamRoute
+  '/despre': typeof DespreRoute
+  '/evenimente': typeof EvenimenteRoute
+  '/galerie': typeof GalerieRoute
+  '/impact': typeof ImpactRoute
+  '/experiente/$slug': typeof ExperienteSlugRoute
+  '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
+  '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
+  '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
+  '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/povesti/$slug': typeof PovestiSlugRoute
+  '/experiente/': typeof ExperienteIndexRoute
+  '/implica-te/': typeof ImplicaTeIndexRoute
+  '/povesti/': typeof PovestiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cum-invatam': typeof CumInvatamRoute
+  '/despre': typeof DespreRoute
+  '/evenimente': typeof EvenimenteRoute
+  '/galerie': typeof GalerieRoute
+  '/impact': typeof ImpactRoute
+  '/experiente/$slug': typeof ExperienteSlugRoute
+  '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
+  '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
+  '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
+  '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/povesti/$slug': typeof PovestiSlugRoute
+  '/experiente': typeof ExperienteIndexRoute
+  '/implica-te': typeof ImplicaTeIndexRoute
+  '/povesti': typeof PovestiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cum-invatam': typeof CumInvatamRoute
+  '/despre': typeof DespreRoute
+  '/evenimente': typeof EvenimenteRoute
+  '/galerie': typeof GalerieRoute
+  '/impact': typeof ImpactRoute
+  '/experiente/$slug': typeof ExperienteSlugRoute
+  '/implica-te/doneaza': typeof ImplicaTeDoneazaRoute
+  '/implica-te/ofera-o-experienta': typeof ImplicaTeOferaOExperientaRoute
+  '/implica-te/parteneri': typeof ImplicaTeParteneriRoute
+  '/implica-te/voluntariat': typeof ImplicaTeVoluntariatRoute
+  '/povesti/$slug': typeof PovestiSlugRoute
+  '/experiente/': typeof ExperienteIndexRoute
+  '/implica-te/': typeof ImplicaTeIndexRoute
+  '/povesti/': typeof PovestiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cum-invatam'
+    | '/despre'
+    | '/evenimente'
+    | '/galerie'
+    | '/impact'
+    | '/experiente/$slug'
+    | '/implica-te/doneaza'
+    | '/implica-te/ofera-o-experienta'
+    | '/implica-te/parteneri'
+    | '/implica-te/voluntariat'
+    | '/povesti/$slug'
+    | '/experiente/'
+    | '/implica-te/'
+    | '/povesti/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cum-invatam'
+    | '/despre'
+    | '/evenimente'
+    | '/galerie'
+    | '/impact'
+    | '/experiente/$slug'
+    | '/implica-te/doneaza'
+    | '/implica-te/ofera-o-experienta'
+    | '/implica-te/parteneri'
+    | '/implica-te/voluntariat'
+    | '/povesti/$slug'
+    | '/experiente'
+    | '/implica-te'
+    | '/povesti'
+  id:
+    | '__root__'
+    | '/'
+    | '/cum-invatam'
+    | '/despre'
+    | '/evenimente'
+    | '/galerie'
+    | '/impact'
+    | '/experiente/$slug'
+    | '/implica-te/doneaza'
+    | '/implica-te/ofera-o-experienta'
+    | '/implica-te/parteneri'
+    | '/implica-te/voluntariat'
+    | '/povesti/$slug'
+    | '/experiente/'
+    | '/implica-te/'
+    | '/povesti/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CumInvatamRoute: typeof CumInvatamRoute
+  DespreRoute: typeof DespreRoute
+  EvenimenteRoute: typeof EvenimenteRoute
+  GalerieRoute: typeof GalerieRoute
+  ImpactRoute: typeof ImpactRoute
+  ExperienteSlugRoute: typeof ExperienteSlugRoute
+  ImplicaTeDoneazaRoute: typeof ImplicaTeDoneazaRoute
+  ImplicaTeOferaOExperientaRoute: typeof ImplicaTeOferaOExperientaRoute
+  ImplicaTeParteneriRoute: typeof ImplicaTeParteneriRoute
+  ImplicaTeVoluntariatRoute: typeof ImplicaTeVoluntariatRoute
+  PovestiSlugRoute: typeof PovestiSlugRoute
+  ExperienteIndexRoute: typeof ExperienteIndexRoute
+  ImplicaTeIndexRoute: typeof ImplicaTeIndexRoute
+  PovestiIndexRoute: typeof PovestiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +235,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cum-invatam': {
+      id: '/cum-invatam'
+      path: '/cum-invatam'
+      fullPath: '/cum-invatam'
+      preLoaderRoute: typeof CumInvatamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/despre': {
+      id: '/despre'
+      path: '/despre'
+      fullPath: '/despre'
+      preLoaderRoute: typeof DespreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evenimente': {
+      id: '/evenimente'
+      path: '/evenimente'
+      fullPath: '/evenimente'
+      preLoaderRoute: typeof EvenimenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie': {
+      id: '/galerie'
+      path: '/galerie'
+      fullPath: '/galerie'
+      preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiente/': {
+      id: '/experiente/'
+      path: '/experiente'
+      fullPath: '/experiente/'
+      preLoaderRoute: typeof ExperienteIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiente/$slug': {
+      id: '/experiente/$slug'
+      path: '/experiente/$slug'
+      fullPath: '/experiente/$slug'
+      preLoaderRoute: typeof ExperienteSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implica-te/': {
+      id: '/implica-te/'
+      path: '/implica-te'
+      fullPath: '/implica-te/'
+      preLoaderRoute: typeof ImplicaTeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implica-te/doneaza': {
+      id: '/implica-te/doneaza'
+      path: '/implica-te/doneaza'
+      fullPath: '/implica-te/doneaza'
+      preLoaderRoute: typeof ImplicaTeDoneazaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implica-te/ofera-o-experienta': {
+      id: '/implica-te/ofera-o-experienta'
+      path: '/implica-te/ofera-o-experienta'
+      fullPath: '/implica-te/ofera-o-experienta'
+      preLoaderRoute: typeof ImplicaTeOferaOExperientaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implica-te/parteneri': {
+      id: '/implica-te/parteneri'
+      path: '/implica-te/parteneri'
+      fullPath: '/implica-te/parteneri'
+      preLoaderRoute: typeof ImplicaTeParteneriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implica-te/voluntariat': {
+      id: '/implica-te/voluntariat'
+      path: '/implica-te/voluntariat'
+      fullPath: '/implica-te/voluntariat'
+      preLoaderRoute: typeof ImplicaTeVoluntariatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/povesti/': {
+      id: '/povesti/'
+      path: '/povesti'
+      fullPath: '/povesti/'
+      preLoaderRoute: typeof PovestiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/povesti/$slug': {
+      id: '/povesti/$slug'
+      path: '/povesti/$slug'
+      fullPath: '/povesti/$slug'
+      preLoaderRoute: typeof PovestiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CumInvatamRoute: CumInvatamRoute,
+  DespreRoute: DespreRoute,
+  EvenimenteRoute: EvenimenteRoute,
+  GalerieRoute: GalerieRoute,
+  ImpactRoute: ImpactRoute,
+  ExperienteSlugRoute: ExperienteSlugRoute,
+  ImplicaTeDoneazaRoute: ImplicaTeDoneazaRoute,
+  ImplicaTeOferaOExperientaRoute: ImplicaTeOferaOExperientaRoute,
+  ImplicaTeParteneriRoute: ImplicaTeParteneriRoute,
+  ImplicaTeVoluntariatRoute: ImplicaTeVoluntariatRoute,
+  PovestiSlugRoute: PovestiSlugRoute,
+  ExperienteIndexRoute: ExperienteIndexRoute,
+  ImplicaTeIndexRoute: ImplicaTeIndexRoute,
+  PovestiIndexRoute: PovestiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
