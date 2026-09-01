@@ -108,7 +108,7 @@ function HomePage() {
       <section className="relative isolate overflow-hidden">
         <img
           src={images.heroWater}
-          alt="Grup de adolescenți în costume de neopren intrând într-un lac de munte, văzuți din spate"
+          alt="Grup de adolescenți cu veste de salvare pe o plută de lemn, pe un lac de munte din Covasna"
           width={1920}
           height={1088}
           fetchPriority="high"
@@ -170,8 +170,8 @@ function HomePage() {
           </Reveal>
           <Reveal delay={120} className="relative">
             <img
-              src={images.expNature}
-              alt="Mâinile unui copil examinând o frunză cu o lupă, într-o pădure"
+              src={images.expClimbing}
+              alt="Copil care urcă pe un perete de escaladă, sprijinit de doi instructori"
               width={1280}
               height={960}
               loading="lazy"
@@ -370,8 +370,8 @@ function HomePage() {
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <img
-              src={images.community}
-              alt="Voluntari și adolescenți pregătind împreună echipament outdoor"
+              src={images.expNature}
+              alt="Copii, voluntari și mașini de teren pe o creastă montană însorită"
               width={1280}
               height={960}
               loading="lazy"

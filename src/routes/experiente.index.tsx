@@ -38,8 +38,8 @@ function ExperiencesPage() {
         eyebrow="Experiențe"
         title="Experiențe care devin amintiri."
         intro="Fiecare experiență are o dimensiune educațională: ce facem, ce provocare apare, ce reflectăm și ce putem lua cu noi mai departe."
-        image={images.expKayak}
-        imageAlt="Caiace pe un râu liniștit, dimineața devreme"
+        image={images.community}
+        imageAlt="Mașini de teren pregătite la marginea pădurii, înaintea unei experiențe outdoor"
       />
 
       <Section>

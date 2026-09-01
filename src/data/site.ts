@@ -4,14 +4,27 @@
  * placeholder-e. Nu adăuga date reale fără confirmare.
  */
 
-import heroWater from "@/assets/hero-water.jpg";
-import expDiving from "@/assets/exp-diving.jpg";
-import expKayak from "@/assets/exp-kayak.jpg";
-import expClimbing from "@/assets/exp-climbing.jpg";
-import expCamp from "@/assets/exp-camp.jpg";
-import expNature from "@/assets/exp-nature.jpg";
-import expEducation from "@/assets/exp-education.jpg";
-import community from "@/assets/community.jpg";
+import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
+import expDivingAsset from "@/assets/experience-for-all-scufundari-lac-instructori.jpg.asset.json";
+import expKayakAsset from "@/assets/experience-for-all-initiere-scufundari-piscina.jpg.asset.json";
+import expClimbingAsset from "@/assets/experience-for-all-escalada-copil-instructor.jpg.asset.json";
+import expCampAsset from "@/assets/experience-for-all-excursie-carute-padure.jpg.asset.json";
+import expNatureAsset from "@/assets/experience-for-all-creasta-montana-offroad.jpg.asset.json";
+import expEducationAsset from "@/assets/experience-for-all-atelier-scoala-copii.jpg.asset.json";
+import communityAsset from "@/assets/experience-for-all-voluntari-masini-offroad.jpg.asset.json";
+import diveSurfaceAsset from "@/assets/experience-for-all-scafandri-suprafata-lac.jpg.asset.json";
+import brandTokenAsset from "@/assets/experience-for-all-medalion-brand.jpg.asset.json";
+
+const heroWater = heroWaterAsset.url;
+const expDiving = expDivingAsset.url;
+const expKayak = expKayakAsset.url;
+const expClimbing = expClimbingAsset.url;
+const expCamp = expCampAsset.url;
+const expNature = expNatureAsset.url;
+const expEducation = expEducationAsset.url;
+const community = communityAsset.url;
+const diveSurface = diveSurfaceAsset.url;
+const brandToken = brandTokenAsset.url;
 
 export const images = {
   heroWater,
@@ -22,7 +35,10 @@ export const images = {
   expNature,
   expEducation,
   community,
+  diveSurface,
+  brandToken,
 };
+
 
 export const PLACEHOLDER = "[DE COMPLETAT]";
 
@@ -121,7 +137,7 @@ export const experiences: Experience[] = [
     title: "Caiac",
     category: "Apă",
     short: "Navigăm împreună. Barca merge doar dacă vâsliți în același ritm.",
-    image: expKayak,
+    image: heroWater,
     what: "Ieșiri pe apă calmă, în echipe de doi sau în grup, cu tehnică de bază, siguranță pe apă și trasee scurte adaptate vârstei.",
     why: "Caiacul face vizibilă cooperarea. Dacă fiecare vâslește separat, barca se învârte. Dacă vâsliți împreună, mergeți înainte. Este o lecție care nu are nevoie de explicații.",
     learning: ["cooperare", "comunicare", "coordonare", "responsabilitate comună"],
@@ -276,7 +292,7 @@ export const experiences: Experience[] = [
     title: "Experiențe speciale",
     category: "Experiențe speciale",
     short: "Detectare de metale, întâlniri cu profesioniști, activități creative.",
-    image: community,
+    image: brandToken,
     what: "Experiențe unice, propuse de profesioniști și voluntari: o zi cu un fotograf, o seară cu un astronom, o căutare cu detectorul de metale, un atelier creativ.",
     why: "Uneori o singură întâlnire cu un om pasionat de meseria lui deschide o direcție la care copilul nu se gândise.",
     learning: ["curiozitate", "modele profesionale", "explorarea intereselor", "creativitate"],
@@ -445,12 +461,15 @@ export const galleryCategories = [
 ];
 
 export const gallery = [
-  { src: images.heroWater, alt: "Grup de adolescenți intrând într-un lac de munte, văzuți din spate", category: "Apă" },
-  { src: images.expDiving, alt: "Scufundare alături de instructor, raze de soare prin apă", category: "Scufundări" },
-  { src: images.expKayak, alt: "Două caiace pe un râu liniștit, dimineața", category: "Apă" },
-  { src: images.expClimbing, alt: "Escaladă pe perete de stâncă, cu asigurare de jos", category: "Aventură" },
-  { src: images.expCamp, alt: "Foc de tabără și corturi într-o poiană, la asfințit", category: "Tabere" },
-  { src: images.expNature, alt: "Mâinile unui copil examinând o frunză cu lupa", category: "Natură" },
-  { src: images.expEducation, alt: "Grup așezat în cerc pe iarbă, atelier în aer liber", category: "Învățare" },
-  { src: images.community, alt: "Voluntari pregătind echipament outdoor pe o masă de lemn", category: "Voluntari" },
+  { src: images.heroWater, alt: "Grup de adolescenți cu veste de salvare pe o plută de lemn, pe un lac înconjurat de dealuri împădurite", category: "Apă" },
+  { src: images.expDiving, alt: "Scafandri cu echipament complet, pregătindu-se în apă lângă un ponton", category: "Scufundări" },
+  { src: images.diveSurface, alt: "Doi scafandri la suprafața lacului, verificând echipamentul lângă un reper", category: "Scufundări" },
+  { src: images.expKayak, alt: "Inițiere în scufundări într-o piscină, cu instructori alături de participanți", category: "Apă" },
+  { src: images.expClimbing, alt: "Copil care urcă pe un perete de escaladă, asigurat de doi instructori", category: "Aventură" },
+  { src: images.expCamp, alt: "Grup într-o căruță trasă de cai, pe un drum forestier", category: "Tabere" },
+  { src: images.expNature, alt: "Grup și mașini de teren pe o creastă montană însorită", category: "Natură" },
+  { src: images.expEducation, alt: "Copii într-o sală de școală, ridicând mâinile în timpul unui atelier", category: "Învățare" },
+  { src: images.community, alt: "Mașini de teren pline de noroi, parcate la marginea pădurii înainte de o experiență", category: "Voluntari" },
+  { src: images.brandToken, alt: "Medalion metalic gravat cu textul Experience for All", category: "În culise" },
 ];
+

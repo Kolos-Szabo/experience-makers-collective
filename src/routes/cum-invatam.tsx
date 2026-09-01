@@ -33,7 +33,7 @@ function LearningPage() {
         title="Învățarea nu se termină când ieșim din clasă."
         intro="Educația non-formală creează contexte în care oamenii învață prin participare, experiență, cooperare și reflecție. Experience for All folosește mediul outdoor pentru a crea astfel de contexte."
         image={images.expEducation}
-        imageAlt="Grup de adolescenți și un facilitator, așezați în cerc pe iarbă, în munți"
+        imageAlt="Copii într-o sală de școală ridicând mâinile în timpul unui atelier interactiv"
       />
 
       <Section>
