@@ -44,7 +44,7 @@ function CookiesPage() {
             afectate.
           </p>
           <h2 className="display-md pt-6">Întrebări</h2>
-          <p>Scrie-ne la {org.email}.</p>
+          <p>Scrie-ne la <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a>.</p>
         </Prose>
       </Section>
     </>

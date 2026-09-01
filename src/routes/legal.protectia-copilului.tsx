@@ -56,7 +56,7 @@ function SafeguardingPage() {
           </p>
           <h2 className="display-md pt-6">Raportarea unei îngrijorări</h2>
           <p>
-            Orice îngrijorare privind siguranța unui copil poate fi semnalată la {org.email} și este
+            Orice îngrijorare privind siguranța unui copil poate fi semnalată la <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a> și este
             tratată cu prioritate și confidențialitate.
           </p>
         </Prose>
