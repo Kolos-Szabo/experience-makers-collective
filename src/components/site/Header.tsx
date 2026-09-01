@@ -45,7 +45,7 @@ export function Header() {
           className="flex shrink-0 items-center py-2 pr-2"
           onClick={() => setOpen(false)}
         >
-          <Logo className="h-8 w-auto md:h-9 lg:h-10" />
+          <Logo className="h-9 w-auto md:h-10 lg:h-11" />
         </Link>
 
         <nav aria-label="Navigație principală" className="hidden items-center gap-1 xl:flex">
