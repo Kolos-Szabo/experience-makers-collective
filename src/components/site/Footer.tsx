@@ -88,11 +88,11 @@ export function Footer() {
             </p>
             <a
               href={contact.phoneHref}
-              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+              aria-label={`Sună-ne pentru mai multe informații — ${contact.phoneDisplay}`}
               className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-md bg-accent px-5 font-display text-sm font-semibold text-charcoal transition-colors hover:bg-cream"
             >
               <Phone className="size-4" aria-hidden="true" />
-              Sună-ne pentru a dona
+              Sună-ne pentru mai multe informații
             </a>
           </div>
           <p className="mt-6 text-eyebrow text-cream/60">{org.tagline}</p>

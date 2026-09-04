@@ -65,7 +65,7 @@ function DonatePage() {
           </div>
 
           <aside className="space-y-6">
-            <DonateCallCard title="Sună-ne pentru a dona" />
+            <DonateCallCard title="Sună-ne pentru mai multe informații" />
 
             <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={80}>
               <h2 className="text-xl font-bold">Brățara Experience for All</h2>
@@ -114,7 +114,7 @@ function DonatePage() {
           invert
         />
         <div className="mt-10">
-          <CallButton label="Sună-ne pentru a dona" size="xl" />
+          <CallButton label="Sună-ne pentru mai multe informații" size="xl" />
         </div>
       </Section>
     </>

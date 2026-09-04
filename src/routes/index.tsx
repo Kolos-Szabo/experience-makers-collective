@@ -125,7 +125,7 @@ function HomePage() {
             pentru copii și adolescenți din sistemul de protecție a copilului din județul Covasna.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <CallButton label="Sună-ne pentru a dona" size="xl" />
+            <CallButton label="Sună-ne pentru mai multe informații" size="xl" />
             <Button asChild variant="onImage" size="xl">
               <Link to="/cum-invatam">Descoperă cum învățăm prin experiențe</Link>
             </Button>
