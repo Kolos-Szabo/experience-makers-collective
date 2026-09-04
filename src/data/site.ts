@@ -1,7 +1,6 @@
 /**
  * Conținut editabil al site-ului Experience for All.
- * Toate valorile numerice și textele marcate cu [DE COMPLETAT] sunt
- * placeholder-e. Nu adăuga date reale fără confirmare.
+ * Nu adăuga date reale fără confirmare.
  */
 
 import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
@@ -38,10 +37,6 @@ export const images = {
   diveSurface,
   brandToken,
 };
-
-
-export const PLACEHOLDER = "[DE COMPLETAT]";
-
 export const org = {
   name: "Experience for All",
   tagline: "Trăiește. Reflectează. Învață. Crește.",
@@ -50,10 +45,6 @@ export const org = {
   county: "Covasna, România",
   email: "infoexperienceforall@gmail.com",
   phone: "+40 755 011 497",
-  address: PLACEHOLDER,
-  legalEntity: PLACEHOLDER,
-  cui: PLACEHOLDER,
-  iban: PLACEHOLDER,
 };
 
 /** Canalele oficiale de contact — folosite peste tot în site. */
