@@ -16,6 +16,7 @@ import diveSurfaceAsset from "@/assets/experience-for-all-scafandri-suprafata-la
 import brandTokenAsset from "@/assets/experience-for-all-medalion-brand.jpg.asset.json";
 
 const heroWater = heroWaterAsset.url;
+const heroMeadow = heroMeadowAsset.url;
 const expDiving = expDivingAsset.url;
 const expKayak = expKayakAsset.url;
 const expClimbing = expClimbingAsset.url;
