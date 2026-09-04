@@ -29,6 +29,7 @@ const brandToken = brandTokenAsset.url;
 
 export const images = {
   heroWater,
+  heroMeadow,
   expDiving,
   expKayak,
   expClimbing,
