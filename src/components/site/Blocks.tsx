@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/site/Logo";
 import { ContactInline } from "@/components/site/ContactInline";
+import { CallButton } from "@/components/site/CallToDonate";
 
 export function Section({
   children,
