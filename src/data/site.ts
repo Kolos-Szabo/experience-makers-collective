@@ -137,34 +137,6 @@ export const experiences: Experience[] = [
     status: "Activă",
   },
   {
-    slug: "caiac",
-    title: "Caiac",
-    category: "Apă",
-    short: "Navigăm împreună. Barca merge doar dacă vâsliți în același ritm.",
-    image: heroWater,
-    what: "Ieșiri pe apă calmă, în echipe de doi sau în grup, cu tehnică de bază, siguranță pe apă și trasee scurte adaptate vârstei.",
-    why: "Caiacul face vizibilă cooperarea. Dacă fiecare vâslește separat, barca se învârte. Dacă vâsliți împreună, mergeți înainte. Este o lecție care nu are nevoie de explicații.",
-    learning: ["cooperare", "comunicare", "coordonare", "responsabilitate comună"],
-    challenge:
-      "Sincronizarea cu celălalt și acceptarea faptului că nu poți controla totul singur.",
-    reflection: [
-      "Cine a dat ritmul și cum ați decis?",
-      "Ce s-a întâmplat când nu ați fost sincronizați?",
-      "Cum ați rezolvat?",
-    ],
-    transfer: [
-      "Cum negociez un ritm comun într-un grup.",
-      "Cum spun ce am nevoie fără să acuz pe cineva.",
-    ],
-    safety: [
-      "veste de salvare obligatorii",
-      "însoțitor pe apă",
-      "trasee evaluate în prealabil",
-      "verificarea condițiilor meteo",
-    ],
-    status: "Activă",
-  },
-  {
     slug: "escalada",
     title: "Escaladă",
     category: "Aventură",
