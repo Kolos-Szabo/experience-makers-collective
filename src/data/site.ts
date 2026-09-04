@@ -4,6 +4,7 @@
  */
 
 import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
+import heroMeadowAsset from "@/assets/experience-for-all-caruta-cai-pajiste-grup.jpg.asset.json";
 import expDivingAsset from "@/assets/experience-for-all-scufundari-lac-instructori.jpg.asset.json";
 import expKayakAsset from "@/assets/experience-for-all-initiere-scufundari-piscina.jpg.asset.json";
 import expClimbingAsset from "@/assets/experience-for-all-escalada-copil-instructor.jpg.asset.json";
