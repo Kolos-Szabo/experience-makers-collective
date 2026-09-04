@@ -29,7 +29,7 @@ const paths = [
     to: "/implica-te/doneaza" as const,
     title: "Donează",
     text: "Contribuie la transportul, echipamentul și logistica următoarei experiențe.",
-    cta: "Susține o experiență",
+    cta: "Află cum poți dona",
   },
   {
     to: "/implica-te/voluntariat" as const,

@@ -119,9 +119,22 @@ export function Header() {
           >
             <Mail className="size-4" aria-hidden="true" />
           </a>
-          <Button asChild variant="cta" size="sm" className="hidden sm:inline-flex">
-            <Link to="/implica-te/doneaza">Donează</Link>
+          <Button asChild variant="cta" size="sm" className="hidden min-h-10 sm:inline-flex">
+            <a
+              href={contact.phoneHref}
+              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+            >
+              <Phone className="size-4" aria-hidden="true" />
+              Sună-ne pentru a dona
+            </a>
           </Button>
+          <a
+            href={contact.phoneHref}
+            aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+            className="inline-flex size-10 items-center justify-center rounded-md bg-primary text-primary-foreground transition-colors hover:bg-forest-deep sm:hidden"
+          >
+            <Phone className="size-5" aria-hidden="true" />
+          </a>
           <button
             type="button"
             className="inline-flex size-10 items-center justify-center rounded-md border border-border xl:hidden"
@@ -161,11 +174,19 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Button asChild variant="cta" className="mt-3">
-            <Link to="/implica-te/doneaza" onClick={() => setOpen(false)}>
-              Donează
-            </Link>
+          <Button asChild variant="cta" className="mt-3 min-h-12">
+            <a
+              href={contact.phoneHref}
+              onClick={() => setOpen(false)}
+              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+            >
+              <Phone className="size-4" aria-hidden="true" />
+              Sună-ne pentru a dona
+            </a>
           </Button>
+          <p className="px-3 pt-2 text-xs text-muted-foreground">
+            Nu avem donații online. Îți explicăm personal la telefon cum poți susține proiectul.
+          </p>
           <p className="text-eyebrow px-3 pt-5 text-muted-foreground">Contact</p>
           <a
             href={contact.phoneHref}

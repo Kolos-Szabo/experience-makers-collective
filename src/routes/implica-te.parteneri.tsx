@@ -4,6 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SimpleForm, type Field } from "@/components/site/SimpleForm";
 import { partnerContributions } from "@/data/site";
 import { PartnersGrid } from "@/components/site/Partners";
+import { DonateCallBanner } from "@/components/site/CallToDonate";
 
 export const Route = createFileRoute("/implica-te/parteneri")({
   head: () => ({
@@ -70,6 +71,8 @@ function PartnersPage() {
         </div>
 
       </Section>
+
+      <DonateCallBanner />
     </>
   );
 }

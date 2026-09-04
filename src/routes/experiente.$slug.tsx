@@ -143,7 +143,7 @@ function ExperienceDetail() {
                 <Link to="/implica-te/ofera-o-experienta">Propune o experiență</Link>
               </Button>
               <Button asChild variant="outline" className="mt-3 w-full">
-                <Link to="/implica-te/doneaza">Susține o experiență</Link>
+                <Link to="/implica-te/doneaza">Află cum poți susține</Link>
               </Button>
             </Reveal>
           </aside>

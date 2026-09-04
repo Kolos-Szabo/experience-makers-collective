@@ -4,6 +4,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { donationUses } from "@/data/site";
 import { ContactInline } from "@/components/site/ContactInline";
+import { CallButton, DonateCallCard } from "@/components/site/CallToDonate";
+import { contact } from "@/data/site";
 
 export const Route = createFileRoute("/implica-te/doneaza")({
   head: () => ({
@@ -32,8 +34,11 @@ function DonatePage() {
       <PageHero
         eyebrow="Donează"
         title="Contribuie la următoarea experiență."
-        intro="Nu strângem fonduri pentru a salva pe cineva. Strângem resurse pentru a face posibilă următoarea zi în care un copil încearcă ceva nou."
-      />
+        intro="Nu strângem fonduri pentru a salva pe cineva. Strângem resurse pentru a face posibilă următoarea zi în care un copil încearcă ceva nou. Momentan donațiile se fac prin telefon — sună-ne și îți explicăm personal cum poți contribui."
+      >
+        <CallButton size="xl" />
+        <CallButton label="Sună acum" variant="outline" size="xl" showNumber />
+      </PageHero>
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
@@ -60,16 +65,7 @@ function DonatePage() {
           </div>
 
           <aside className="space-y-6">
-            <Reveal className="surface-card p-7">
-              <h2 className="text-xl font-bold">Donație online</h2>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Plata online și donația recurentă vor fi disponibile după configurarea procesatorului
-                de plăți.
-              </p>
-              <Button variant="cta" className="mt-5 w-full" disabled>
-                În curând
-              </Button>
-            </Reveal>
+            <DonateCallCard title="Sună-ne pentru a dona" />
 
             <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={80}>
               <h2 className="text-xl font-bold">Brățara Experience for All</h2>
@@ -95,6 +91,16 @@ function DonatePage() {
                 Îți explicăm exact unde ajunge contribuția ta. Scrie-ne sau sună-ne.
               </p>
               <ContactInline className="-ml-3 mt-4" />
+              <p className="mt-3 text-sm text-muted-foreground">
+                Cel mai simplu: sună-ne la{" "}
+                <a
+                  href={contact.phoneHref}
+                  className="font-medium text-primary underline underline-offset-4"
+                >
+                  {contact.phoneDisplay}
+                </a>
+                .
+              </p>
             </Reveal>
           </aside>
         </div>
@@ -107,6 +113,9 @@ function DonatePage() {
           intro="Avem o idee bună, un model de lucru și copii care pot beneficia. Contribuția ta construiește experiența următoare, nu compensează o lipsă."
           invert
         />
+        <div className="mt-10">
+          <CallButton label="Sună-ne pentru a dona" size="xl" />
+        </div>
       </Section>
     </>
   );
