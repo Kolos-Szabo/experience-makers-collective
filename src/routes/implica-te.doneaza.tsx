@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { donationUses, org, PLACEHOLDER } from "@/data/site";
+import { donationUses } from "@/data/site";
 import { ContactInline } from "@/components/site/ContactInline";
 
 export const Route = createFileRoute("/implica-te/doneaza")({
@@ -61,39 +61,21 @@ function DonatePage() {
 
           <aside className="space-y-6">
             <Reveal className="surface-card p-7">
-              <h2 className="text-xl font-bold">Donație prin transfer bancar</h2>
-              <dl className="mt-5 space-y-3 text-sm">
-                <div>
-                  <dt className="text-muted-foreground">Beneficiar</dt>
-                  <dd className="font-medium">{org.legalEntity}</dd>
-                </div>
-                <div>
-                  <dt className="text-muted-foreground">IBAN</dt>
-                  <dd className="font-medium">{org.iban}</dd>
-                </div>
-                <div>
-                  <dt className="text-muted-foreground">Detalii plată</dt>
-                  <dd className="font-medium">Donație Experience for All</dd>
-                </div>
-              </dl>
-            </Reveal>
-
-            <Reveal className="surface-card p-7" delay={80}>
               <h2 className="text-xl font-bold">Donație online</h2>
               <p className="mt-3 text-sm text-muted-foreground">
                 Plata online și donația recurentă vor fi disponibile după configurarea procesatorului
-                de plăți. {PLACEHOLDER}
+                de plăți.
               </p>
               <Button variant="cta" className="mt-5 w-full" disabled>
                 În curând
               </Button>
             </Reveal>
 
-            <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={140}>
+            <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={80}>
               <h2 className="text-xl font-bold">Brățara Experience for All</h2>
               <p className="mt-3 text-sm">
-                Un mecanism concret de susținere a programului. Prețul, disponibilitatea și modul de
-                comandă se publică după confirmarea datelor reale: {PLACEHOLDER}
+                Un mecanism concret de susținere a programului. Detalii despre preț și comandă, în
+                curând.
               </p>
             </Reveal>
 

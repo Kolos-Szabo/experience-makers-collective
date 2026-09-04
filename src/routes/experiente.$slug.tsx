@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section, ListCheck } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { experiences, PLACEHOLDER } from "@/data/site";
+import { experiences } from "@/data/site";
 
 export const Route = createFileRoute("/experiente/$slug")({
   loader: ({ params }) => {
@@ -119,14 +119,6 @@ function ExperienceDetail() {
                   <dd className="font-medium">{e.category}</dd>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground">Vârstă recomandată</dt>
-                  <dd className="font-medium">{e.ageRange}</dd>
-                </div>
-                <div>
-                  <dt className="text-muted-foreground">Locație</dt>
-                  <dd className="font-medium">{e.location}</dd>
-                </div>
-                <div>
                   <dt className="text-muted-foreground">Status</dt>
                   <dd className="font-medium">{e.status}</dd>
                 </div>
@@ -143,11 +135,7 @@ function ExperienceDetail() {
                 <Link to="/siguranta">Politica de siguranță →</Link>
               </Button>
             </Reveal>
-            <Reveal className="surface-card p-7" delay={140}>
-              <h2 className="text-eyebrow text-muted-foreground">Parteneri</h2>
-              <p className="mt-4 text-sm text-muted-foreground">{PLACEHOLDER}</p>
-            </Reveal>
-            <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={180}>
+            <Reveal className="rounded-xl bg-sand p-7 text-forest-deep" delay={140}>
               <h2 className="display-md text-forest-deep">
                 Creează o experiență împreună cu noi
               </h2>
