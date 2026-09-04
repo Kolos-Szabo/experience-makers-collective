@@ -4,6 +4,7 @@
  */
 
 import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
+import heroMeadowAsset from "@/assets/experience-for-all-caruta-cai-pajiste-grup.jpg.asset.json";
 import expDivingAsset from "@/assets/experience-for-all-scufundari-lac-instructori.jpg.asset.json";
 import expKayakAsset from "@/assets/experience-for-all-initiere-scufundari-piscina.jpg.asset.json";
 import expClimbingAsset from "@/assets/experience-for-all-escalada-copil-instructor.jpg.asset.json";
@@ -15,6 +16,7 @@ import diveSurfaceAsset from "@/assets/experience-for-all-scafandri-suprafata-la
 import brandTokenAsset from "@/assets/experience-for-all-medalion-brand.jpg.asset.json";
 
 const heroWater = heroWaterAsset.url;
+const heroMeadow = heroMeadowAsset.url;
 const expDiving = expDivingAsset.url;
 const expKayak = expKayakAsset.url;
 const expClimbing = expClimbingAsset.url;
@@ -27,6 +29,7 @@ const brandToken = brandTokenAsset.url;
 
 export const images = {
   heroWater,
+  heroMeadow,
   expDiving,
   expKayak,
   expClimbing,

@@ -110,8 +110,8 @@ function HomePage() {
       {/* 01 — HERO */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={images.heroWater}
-          alt="Grup de adolescenți cu veste de salvare pe o plută de lemn, pe un lac de munte din Covasna"
+          src={images.heroMeadow}
+          alt="Copii și adulți într-o căruță trasă de cai, pe o pajiște însorită din Covasna"
           width={1920}
           height={1088}
           fetchPriority="high"
