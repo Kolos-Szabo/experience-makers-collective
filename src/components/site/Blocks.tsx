@@ -161,7 +161,7 @@ export function FinalCTA() {
             experiență alături de noi.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <CallButton label="Sună-ne pentru a dona" />
+            <CallButton label="Sună-ne pentru mai multe informații" />
             <Button asChild variant="onImage" size="lg">
               <Link to="/implica-te/voluntariat">Devino voluntar</Link>
             </Button>

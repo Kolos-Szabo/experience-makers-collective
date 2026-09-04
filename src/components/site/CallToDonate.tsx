@@ -9,7 +9,7 @@ import { Reveal } from "@/components/site/Reveal";
  * nu există plată online, cont bancar sau altă metodă pe site.
  */
 export function CallButton({
-  label = "Sună-ne pentru a dona",
+  label = "Sună-ne pentru mai multe informații",
   variant = "cta",
   size = "lg",
   className,

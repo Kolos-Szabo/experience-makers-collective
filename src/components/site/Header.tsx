@@ -122,15 +122,15 @@ export function Header() {
           <Button asChild variant="cta" size="sm" className="hidden min-h-10 sm:inline-flex">
             <a
               href={contact.phoneHref}
-              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+              aria-label={`Sună-ne pentru mai multe informații — ${contact.phoneDisplay}`}
             >
               <Phone className="size-4" aria-hidden="true" />
-              Sună-ne pentru a dona
+              Sună-ne pentru mai multe informații
             </a>
           </Button>
           <a
             href={contact.phoneHref}
-            aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+            aria-label={`Sună-ne pentru mai multe informații — ${contact.phoneDisplay}`}
             className="inline-flex size-10 items-center justify-center rounded-md bg-primary text-primary-foreground transition-colors hover:bg-forest-deep sm:hidden"
           >
             <Phone className="size-5" aria-hidden="true" />
@@ -178,10 +178,10 @@ export function Header() {
             <a
               href={contact.phoneHref}
               onClick={() => setOpen(false)}
-              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+              aria-label={`Sună-ne pentru mai multe informații — ${contact.phoneDisplay}`}
             >
               <Phone className="size-4" aria-hidden="true" />
-              Sună-ne pentru a dona
+              Sună-ne pentru mai multe informații
             </a>
           </Button>
           <p className="px-3 pt-2 text-xs text-muted-foreground">
