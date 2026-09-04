@@ -79,6 +79,22 @@ export function Footer() {
               </a>
             </div>
           </address>
+          <div className="mt-8 rounded-xl border border-cream/20 bg-cream/5 p-5">
+            <h2 className="font-display text-base font-bold text-cream">
+              Vrei să susții Experience for All?
+            </h2>
+            <p className="mt-2 text-sm text-cream/75">
+              Momentan nu avem donații online. Sună-ne și îți explicăm personal cum poți dona.
+            </p>
+            <a
+              href={contact.phoneHref}
+              aria-label={`Sună-ne pentru a dona — ${contact.phoneDisplay}`}
+              className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-md bg-accent px-5 font-display text-sm font-semibold text-charcoal transition-colors hover:bg-cream"
+            >
+              <Phone className="size-4" aria-hidden="true" />
+              Sună-ne pentru a dona
+            </a>
+          </div>
           <p className="mt-6 text-eyebrow text-cream/60">{org.tagline}</p>
         </div>
 

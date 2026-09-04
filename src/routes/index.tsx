@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { Section, SectionHeading, FinalCTA } from "@/components/site/Blocks";
+import { CallButton, DonateCallBanner } from "@/components/site/CallToDonate";
 import { PartnersGrid } from "@/components/site/Partners";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { getFeaturedPhotos } from "@/data/gallery";
@@ -73,7 +74,7 @@ const helpPaths = [
     title: "Donează",
     text: "Susții transportul, echipamentul și logistica următoarei experiențe.",
     to: "/implica-te/doneaza" as const,
-    cta: "Susține o experiență",
+    cta: "Află cum poți dona",
   },
   {
     icon: Sparkles,
@@ -124,9 +125,7 @@ function HomePage() {
             pentru copii și adolescenți din sistemul de protecție a copilului din județul Covasna.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Button asChild variant="cta" size="xl">
-              <Link to="/implica-te/doneaza">Susține Experience for All</Link>
-            </Button>
+            <CallButton label="Sună-ne pentru a dona" size="xl" />
             <Button asChild variant="onImage" size="xl">
               <Link to="/cum-invatam">Descoperă cum învățăm prin experiențe</Link>
             </Button>
@@ -492,6 +491,7 @@ function HomePage() {
         </div>
       </Section>
 
+      <DonateCallBanner />
       <FinalCTA />
     </>
   );
