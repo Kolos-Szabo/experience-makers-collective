@@ -104,7 +104,7 @@ export function Footer() {
       <div className="border-t border-cream/15">
         <div className="container-page flex flex-col gap-4 py-6 text-xs text-cream/65 md:flex-row md:items-center md:justify-between">
           <p>
-            {org.legalEntity} · CUI {org.cui} · {org.county}
+            {org.name} · {org.county}
           </p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             <li>

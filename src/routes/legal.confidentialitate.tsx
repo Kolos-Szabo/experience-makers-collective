@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { org, contact, PLACEHOLDER } from "@/data/site";
+import { contact } from "@/data/site";
 
 export const Route = createFileRoute("/legal/confidentialitate")({
   head: () => ({
@@ -32,7 +32,7 @@ function PrivacyPage() {
         <Prose>
           <h2 className="display-md">Cine este operatorul de date</h2>
           <p>
-            {org.legalEntity} ({PLACEHOLDER}), cu sediul în {org.address}, contact: <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a>.
+            Programul Experience for All, contact: <a href={contact.emailHref} className="text-primary underline underline-offset-4">{contact.email}</a>.
           </p>
           <h2 className="display-md pt-6">Ce date colectăm</h2>
           <p>
@@ -45,8 +45,6 @@ function PrivacyPage() {
             Exclusiv pentru a răspunde solicitării tale și pentru a organiza activitățile programului.
             Nu vindem și nu transmitem datele către terți în scopuri de marketing.
           </p>
-          <h2 className="display-md pt-6">Cât le păstrăm</h2>
-          <p>{PLACEHOLDER}</p>
           <h2 className="display-md pt-6">Drepturile tale</h2>
           <p>
             Acces, rectificare, ștergere, restricționare, opoziție și portabilitate. Îți poți exercita

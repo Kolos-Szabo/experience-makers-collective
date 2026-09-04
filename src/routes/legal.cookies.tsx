@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose } from "@/components/site/Blocks";
-import { contact, PLACEHOLDER } from "@/data/site";
+import { contact } from "@/data/site";
 
 export const Route = createFileRoute("/legal/cookies")({
   head: () => ({
@@ -36,7 +36,7 @@ function CookiesPage() {
           <h2 className="display-md pt-6">Analiză</h2>
           <p>
             Dacă vom activa un instrument de analiză a traficului, îl vom lista aici împreună cu
-            perioada de stocare. Status curent: {PLACEHOLDER}
+            perioada de stocare.
           </p>
           <h2 className="display-md pt-6">Cum le controlezi</h2>
           <p>

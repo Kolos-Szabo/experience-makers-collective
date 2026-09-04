@@ -1,7 +1,6 @@
 /**
  * Conținut editabil al site-ului Experience for All.
- * Toate valorile numerice și textele marcate cu [DE COMPLETAT] sunt
- * placeholder-e. Nu adăuga date reale fără confirmare.
+ * Nu adăuga date reale fără confirmare.
  */
 
 import heroWaterAsset from "@/assets/experience-for-all-lac-plutitor-adolescenti.jpg.asset.json";
@@ -38,10 +37,6 @@ export const images = {
   diveSurface,
   brandToken,
 };
-
-
-export const PLACEHOLDER = "[DE COMPLETAT]";
-
 export const org = {
   name: "Experience for All",
   tagline: "Trăiește. Reflectează. Învață. Crește.",
@@ -50,10 +45,6 @@ export const org = {
   county: "Covasna, România",
   email: "infoexperienceforall@gmail.com",
   phone: "+40 755 011 497",
-  address: PLACEHOLDER,
-  legalEntity: PLACEHOLDER,
-  cui: PLACEHOLDER,
-  iban: PLACEHOLDER,
 };
 
 /** Canalele oficiale de contact — folosite peste tot în site. */
@@ -100,8 +91,6 @@ export type Experience = {
   reflection: string[];
   transfer: string[];
   safety: string[];
-  ageRange: string;
-  location: string;
   status: "Activă" | "În pregătire";
 };
 
@@ -142,8 +131,6 @@ export const experiences: Experience[] = [
       "briefing obligatoriu",
       "acord scris din partea reprezentantului legal",
     ],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -172,8 +159,6 @@ export const experiences: Experience[] = [
       "trasee evaluate în prealabil",
       "verificarea condițiilor meteo",
     ],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -207,8 +192,6 @@ export const experiences: Experience[] = [
       "instructori calificați",
       "evaluarea traseului înainte de urcare",
     ],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -242,8 +225,6 @@ export const experiences: Experience[] = [
       "reguli agreate în grup",
       "locații verificate",
     ],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -274,8 +255,6 @@ export const experiences: Experience[] = [
       "echipament potrivit vremii",
       "reguli de grup pe traseu",
     ],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -297,8 +276,6 @@ export const experiences: Experience[] = [
       "Cum spun „nu sunt de acord” fără conflict.",
     ],
     safety: ["facilitatori instruiți", "participare voluntară", "reguli de confidențialitate în grup"],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "Activă",
   },
   {
@@ -314,8 +291,6 @@ export const experiences: Experience[] = [
     reflection: ["Ce te-a surprins?", "Ce ai vrea să încerci după ziua asta?"],
     transfer: ["Cum aflu mai multe despre ceva ce mă interesează."],
     safety: ["voluntari verificați", "activități însoțite", "acordul casei de tip familial"],
-    ageRange: PLACEHOLDER,
-    location: PLACEHOLDER,
     status: "În pregătire",
   },
 ];
@@ -395,7 +370,6 @@ export const qualitativeImpact = [
 export type Story = {
   slug: string;
   title: string;
-  date: string;
   category: string;
   excerpt: string;
   image: string;
@@ -407,7 +381,6 @@ export const stories: Story[] = [
   {
     slug: "structura-unei-povesti",
     title: "Cum arată o poveste Experience for All",
-    date: PLACEHOLDER,
     category: "În culise",
     excerpt:
       "Un format de storytelling care respectă demnitatea copilului: fără nume, fără istoric personal, fără citate inventate.",

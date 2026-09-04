@@ -64,7 +64,7 @@ function StoryPage() {
     <article>
       <Section>
         <p className="text-eyebrow text-primary">
-          {story.category} · {story.date}
+          {story.category}
         </p>
         <h1 className="display-lg mt-5 max-w-3xl">{story.title}</h1>
         <img

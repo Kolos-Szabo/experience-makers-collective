@@ -74,7 +74,7 @@ function StoriesPage() {
                 />
                 <div className="p-6">
                   <p className="text-eyebrow text-primary">
-                    {s.category} · {s.date}
+                    {s.category}
                   </p>
                   <h2 className="mt-3 text-xl font-bold">{s.title}</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.excerpt}</p>
