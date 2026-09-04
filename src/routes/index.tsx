@@ -48,12 +48,6 @@ const notJustActivity = [
     slug: "scufundari",
   },
   {
-    title: "Caiac",
-    activity: "Navigăm împreună.",
-    learning: ["cooperare", "comunicare", "coordonare", "responsabilitate comună"],
-    slug: "caiac",
-  },
-  {
     title: "Escaladă",
     activity: "Urcăm pas cu pas.",
     learning: ["provocări", "răbdare", "încredere", "cererea de ajutor"],
