@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading, Prose, FinalCTA } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { images, PLACEHOLDER, org } from "@/data/site";
+import { images, org } from "@/data/site";
 
 export const Route = createFileRoute("/despre")({
   head: () => ({
@@ -58,8 +58,8 @@ function AboutPage() {
                 </p>
                 <p>
                   Proiectul se desfășoară în colaborare cu structurile și profesioniștii relevanți
-                  din sistemul de protecție a copilului. Detaliile colaborărilor formale se publică
-                  doar după confirmare: {PLACEHOLDER}
+                  din sistemul de protecție a copilului. Publicăm doar colaborările formalizate și
+                  confirmate.
                 </p>
               </Prose>
             </Reveal>
@@ -85,17 +85,6 @@ function AboutPage() {
                 Fiecare copil merită șansa de a trăi experiențe extraordinare, de a învăța prin ele
                 și de a descoperi de ce este capabil.
               </p>
-            </Reveal>
-
-            <Reveal>
-              <h2 className="display-md">Povestea proiectului</h2>
-              <Prose>
-                <p className="mt-4">{PLACEHOLDER}</p>
-                <p className="text-sm text-muted-foreground">
-                  Această secțiune va fi completată cu povestea reală a începutului programului.
-                  Nu publicăm biografii sau detalii nedocumentate.
-                </p>
-              </Prose>
             </Reveal>
 
             <Reveal>

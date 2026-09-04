@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { org, PLACEHOLDER } from "@/data/site";
+import { org } from "@/data/site";
 
 export const Route = createFileRoute("/transparenta")({
   head: () => ({
@@ -47,10 +47,6 @@ function TransparencyPage() {
             <h2 className="display-md">Organizația coordonatoare</h2>
             <dl className="mt-6 space-y-4 text-sm">
               {[
-                ["Denumire", org.legalEntity],
-                ["CUI", org.cui],
-                ["Sediu", org.address],
-                ["IBAN", org.iban],
                 ["Județ de activitate", org.county],
                 ["Contact", org.email],
               ].map(([k, v]) => (
@@ -69,7 +65,6 @@ function TransparencyPage() {
                 <li key={t}>
                   <p className="font-display font-bold">{t}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-                  <p className="mt-1 text-xs font-medium text-primary">{PLACEHOLDER}</p>
                 </li>
               ))}
             </ul>
@@ -83,7 +78,6 @@ function TransparencyPage() {
           title="Cu cine lucrăm"
           intro="Programul se desfășoară în colaborare cu structurile și profesioniștii relevanți din sistemul de protecție a copilului. Publicăm doar colaborările formalizate și confirmate."
         />
-        <p className="mt-8 text-sm text-muted-foreground">{PLACEHOLDER}</p>
       </Section>
 
       <Section>
