@@ -160,9 +160,7 @@ export function FinalCTA() {
             experiență alături de noi.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="cta" size="lg">
-              <Link to="/implica-te/doneaza">Donează</Link>
-            </Button>
+            <CallButton label="Sună-ne pentru a dona" />
             <Button asChild variant="onImage" size="lg">
               <Link to="/implica-te/voluntariat">Devino voluntar</Link>
             </Button>
@@ -170,6 +168,10 @@ export function FinalCTA() {
               <Link to="/implica-te/parteneri">Devino partener</Link>
             </Button>
           </div>
+          <p className="mx-auto mt-6 max-w-xl text-sm text-cream/75">
+            Momentan nu avem donații online. Sună-ne și îți explicăm personal cum poți dona și cum
+            poți susține proiectul.
+          </p>
           <p className="mt-8 text-sm text-cream/70">Ai întrebări înainte să te implici?</p>
           <ContactInline invert className="mt-1 justify-center" />
         </Reveal>
