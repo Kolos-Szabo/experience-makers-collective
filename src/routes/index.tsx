@@ -180,43 +180,6 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* 03 — NU ESTE DOAR O ACTIVITATE */}
-      <Section tone="muted">
-        <SectionHeading
-          eyebrow="Nu este doar o activitate"
-          title="Nu contează doar ceea ce facem. Contează ceea ce descoperim prin ceea ce facem."
-          intro="Fiecare activitate outdoor este proiectată ca un context de învățare. Activitatea este vizibilă. Învățarea este scopul."
-        />
-        <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {notJustActivity.map((item, i) => (
-            <Reveal as="li" key={item.title} delay={i * 70}>
-              <Link
-                to="/experiente/$slug"
-                params={{ slug: item.slug }}
-                className="surface-card group flex h-full flex-col p-7 transition-shadow hover:shadow-[var(--shadow-lift)]"
-              >
-                <h3 className="display-md">{item.title}</h3>
-                <p className="mt-3 text-base text-muted-foreground">{item.activity}</p>
-                <p className="text-eyebrow mt-7 text-primary">Ce poate descoperi un copil</p>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {item.learning.map((l) => (
-                    <li
-                      key={l}
-                      className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
-                    >
-                      {l}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto pt-7 text-sm font-semibold text-primary">
-                  Vezi experiența →
-                </span>
-              </Link>
-            </Reveal>
-          ))}
-        </ul>
-      </Section>
-
       {/* 04 — EXPERIENCE CYCLE */}
       <Section tone="deep">
         <SectionHeading
