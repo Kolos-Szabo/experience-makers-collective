@@ -41,33 +41,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const notJustActivity = [
-  {
-    title: "Scufundare",
-    activity: "Descoperim lumea subacvatică.",
-    learning: ["calm", "atenție", "comunicare", "încredere", "reguli", "necunoscut"],
-    slug: "scufundari",
-  },
-  {
-    title: "Escaladă",
-    activity: "Urcăm pas cu pas.",
-    learning: ["provocări", "răbdare", "încredere", "cererea de ajutor"],
-    slug: "escalada",
-  },
-  {
-    title: "Tabără",
-    activity: "Trăim împreună în aer liber.",
-    learning: ["independență", "adaptabilitate", "responsabilitate", "cooperare"],
-    slug: "tabere",
-  },
-  {
-    title: "Natură",
-    activity: "Explorăm ceea ce este în jurul nostru.",
-    learning: ["observație", "curiozitate", "responsabilitate", "conectare"],
-    slug: "natura",
-  },
-];
-
 const helpPaths = [
   {
     icon: HeartHandshake,
