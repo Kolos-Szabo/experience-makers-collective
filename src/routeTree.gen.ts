@@ -29,8 +29,6 @@ import { Route as LegalConfidentialitateRouteImport } from './routes/legal.confi
 import { Route as LegalCookiesRouteImport } from './routes/legal.cookies'
 import { Route as LegalGdprRouteImport } from './routes/legal.gdpr'
 import { Route as LegalProtectiaCopiluluiRouteImport } from './routes/legal.protectia-copilului'
-import { Route as PovestiIndexRouteImport } from './routes/povesti.index'
-import { Route as PovestiSlugRouteImport } from './routes/povesti.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -133,16 +131,6 @@ const LegalProtectiaCopiluluiRoute = LegalProtectiaCopiluluiRouteImport.update({
   path: '/legal/protectia-copilului',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PovestiIndexRoute = PovestiIndexRouteImport.update({
-  id: '/povesti/',
-  path: '/povesti/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PovestiSlugRoute = PovestiSlugRouteImport.update({
-  id: '/povesti/$slug',
-  path: '/povesti/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -163,10 +151,8 @@ export interface FileRoutesByFullPath {
   '/legal/cookies': typeof LegalCookiesRoute
   '/legal/gdpr': typeof LegalGdprRoute
   '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
-  '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente/': typeof ExperienteIndexRoute
   '/implica-te/': typeof ImplicaTeIndexRoute
-  '/povesti/': typeof PovestiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -187,10 +173,8 @@ export interface FileRoutesByTo {
   '/legal/cookies': typeof LegalCookiesRoute
   '/legal/gdpr': typeof LegalGdprRoute
   '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
-  '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente': typeof ExperienteIndexRoute
   '/implica-te': typeof ImplicaTeIndexRoute
-  '/povesti': typeof PovestiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -212,10 +196,8 @@ export interface FileRoutesById {
   '/legal/cookies': typeof LegalCookiesRoute
   '/legal/gdpr': typeof LegalGdprRoute
   '/legal/protectia-copilului': typeof LegalProtectiaCopiluluiRoute
-  '/povesti/$slug': typeof PovestiSlugRoute
   '/experiente/': typeof ExperienteIndexRoute
   '/implica-te/': typeof ImplicaTeIndexRoute
-  '/povesti/': typeof PovestiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -238,10 +220,8 @@ export interface FileRouteTypes {
     | '/legal/cookies'
     | '/legal/gdpr'
     | '/legal/protectia-copilului'
-    | '/povesti/$slug'
     | '/experiente/'
     | '/implica-te/'
-    | '/povesti/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -262,10 +242,8 @@ export interface FileRouteTypes {
     | '/legal/cookies'
     | '/legal/gdpr'
     | '/legal/protectia-copilului'
-    | '/povesti/$slug'
     | '/experiente'
     | '/implica-te'
-    | '/povesti'
   id:
     | '__root__'
     | '/'
@@ -286,10 +264,8 @@ export interface FileRouteTypes {
     | '/legal/cookies'
     | '/legal/gdpr'
     | '/legal/protectia-copilului'
-    | '/povesti/$slug'
     | '/experiente/'
     | '/implica-te/'
-    | '/povesti/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -311,10 +287,8 @@ export interface RootRouteChildren {
   LegalCookiesRoute: typeof LegalCookiesRoute
   LegalGdprRoute: typeof LegalGdprRoute
   LegalProtectiaCopiluluiRoute: typeof LegalProtectiaCopiluluiRoute
-  PovestiSlugRoute: typeof PovestiSlugRoute
   ExperienteIndexRoute: typeof ExperienteIndexRoute
   ImplicaTeIndexRoute: typeof ImplicaTeIndexRoute
-  PovestiIndexRoute: typeof PovestiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -459,20 +433,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalProtectiaCopiluluiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/povesti/': {
-      id: '/povesti/'
-      path: '/povesti'
-      fullPath: '/povesti/'
-      preLoaderRoute: typeof PovestiIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/povesti/$slug': {
-      id: '/povesti/$slug'
-      path: '/povesti/$slug'
-      fullPath: '/povesti/$slug'
-      preLoaderRoute: typeof PovestiSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -495,10 +455,8 @@ const rootRouteChildren: RootRouteChildren = {
   LegalCookiesRoute: LegalCookiesRoute,
   LegalGdprRoute: LegalGdprRoute,
   LegalProtectiaCopiluluiRoute: LegalProtectiaCopiluluiRoute,
-  PovestiSlugRoute: PovestiSlugRoute,
   ExperienteIndexRoute: ExperienteIndexRoute,
   ImplicaTeIndexRoute: ImplicaTeIndexRoute,
-  PovestiIndexRoute: PovestiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
