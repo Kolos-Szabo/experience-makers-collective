@@ -318,48 +318,6 @@ function HomePage() {
         </ul>
       </Section>
 
-      {/* 10 — TRANSPARENȚĂ */}
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <Reveal>
-            <p className="text-eyebrow text-primary">Transparență</p>
-            <h2 className="display-lg mt-4">Construim cu responsabilitate.</h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              O experiență extraordinară trebuie să fie și o experiență responsabilă: instructori
-              calificați, evaluarea riscurilor, consimțământ, protecția datelor și a imaginii
-              copiilor, raportare clară a resurselor.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild variant="outline" size="lg">
-                <Link to="/transparenta">Unde merge sprijinul tău</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/siguranta">Siguranța copiilor</Link>
-              </Button>
-            </div>
-          </Reveal>
-          <Reveal delay={100} className="surface-card p-8">
-            <h3 className="text-eyebrow text-muted-foreground">Cum măsurăm impactul</h3>
-            <ol className="mt-6 space-y-4">
-              {[
-                ["Input", "resurse"],
-                ["Activitate", "ce facem"],
-                ["Output", "ce realizăm"],
-                ["Experiență", "ce trăiesc copiii"],
-                ["Reflecție", "ce observăm"],
-                ["Învățare", "ce pot descoperi"],
-                ["Impact pe termen lung", "ce schimbări apar în timp"],
-              ].map(([k, v]) => (
-                <li key={k} className="flex items-baseline justify-between gap-6 border-b border-border pb-3">
-                  <span className="font-display font-bold">{k}</span>
-                  <span className="text-sm text-muted-foreground">{v}</span>
-                </li>
-              ))}
-            </ol>
-          </Reveal>
-        </div>
-      </Section>
-
       {/* 11 — PARTENERI */}
       <Section tone="muted">
         <SectionHeading
