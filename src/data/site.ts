@@ -342,33 +342,6 @@ export const qualitativeImpact = [
   "oportunități de colaborare cu profesioniști din comunitate",
 ];
 
-export type Story = {
-  slug: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  image: string;
-  body: string[];
-  themes: string[];
-};
-
-export const stories: Story[] = [
-  {
-    slug: "structura-unei-povesti",
-    title: "Cum arată o poveste Experience for All",
-    category: "În culise",
-    excerpt:
-      "Un format de storytelling care respectă demnitatea copilului: fără nume, fără istoric personal, fără citate inventate.",
-    image: images.expDiving,
-    body: [
-      "Poveștile noastre urmează un traseu simplu: înainte, experiența, provocarea, participarea, reflecția, după.",
-      "Nu publicăm nume, adrese, informații despre familie sau despre trecutul copiilor. Nu folosim imaginea unui copil pentru a genera emoție sau donații.",
-      "Această pagină este un exemplu structural. Poveștile reale vor fi publicate doar după documentare și doar cu acordurile necesare.",
-    ],
-    themes: ["reflecție", "demnitate", "consimțământ"],
-  },
-];
-
 export const events = {
   upcoming: [] as Array<{
     title: string;

@@ -282,39 +282,6 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* 06 — STORY */}
-      <Section tone="sand">
-        <SectionHeading
-          eyebrow="Poveste"
-          title="Un moment poate începe o călătorie."
-          intro="Formatul de mai jos arată cum construim poveștile — fără nume, fără detalii personale, fără citate inventate."
-        />
-        <ol className="mt-14 grid gap-4 md:grid-cols-3 xl:grid-cols-6">
-          {[
-            ["Înainte", "„Nu mai încercasem niciodată.”"],
-            ["Experiența", "„Am intrat în apă.”"],
-            ["Provocarea", "„Mi-a fost puțin teamă.”"],
-            ["Participarea", "„Am continuat.”"],
-            ["Reflecția", "„Am descoperit că pot face lucruri pe care nu le credeam posibile.”"],
-            ["După", "„Data viitoare vreau să încerc altceva.”"],
-          ].map(([label, line], i) => (
-            <Reveal
-              as="li"
-              key={label}
-              delay={i * 70}
-              className="rounded-xl border border-forest-deep/15 bg-cream/70 p-6"
-            >
-              <p className="text-eyebrow text-forest-deep">{label}</p>
-              <p className="mt-3 text-base leading-relaxed">{line}</p>
-            </Reveal>
-          ))}
-        </ol>
-        <p className="mt-8 max-w-2xl text-sm text-forest-deep/75">
-          Acesta este doar un exemplu structural. Poveștile reale se publică numai după documentare
-          și cu acordurile necesare.
-        </p>
-      </Section>
-
       {/* 07 — IMPACT */}
       <Section tone="muted">
         <SectionHeading
