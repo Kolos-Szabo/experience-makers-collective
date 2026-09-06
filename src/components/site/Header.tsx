@@ -11,7 +11,7 @@ const mainNav = [
   { to: "/experiente", label: "Experiențe" },
   { to: "/cum-invatam", label: "Cum învățăm" },
   { to: "/impact", label: "Impact" },
-  { to: "/povesti", label: "Povești" },
+  
 ] as const;
 
 const involveNav = [
