@@ -33,10 +33,24 @@ jobs:
           # GitHub Pages serves the site at /<repo-name>/ — assets must point there.
           BASE_PATH: /${{ github.event.repository.name }}/
 
+      - name: Verify build output
+        run: |
+          echo "::group::Build output"
+          ls -la dist
+          ls -la dist/client || true
+          echo "::endgroup::"
+          if [ ! -d dist/client ] || [ -z "$(ls -A dist/client 2>/dev/null)" ]; then
+            echo "::error::dist/client is missing or empty — build did not produce a static site."
+            exit 1
+          fi
+
+      - name: Add .nojekyll
+        run: touch dist/client/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist/client"
+          path: "${{ github.workspace }}/dist/client"
 
   deploy:
     environment:
