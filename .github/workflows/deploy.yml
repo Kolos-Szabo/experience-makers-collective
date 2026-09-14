@@ -38,8 +38,9 @@ jobs:
         run: bun run build
         env:
           BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
-          # GitHub Pages serves the site at /<repo-name>/ — assets must point there.
-          BASE_PATH: /${{ github.event.repository.name }}/
+          # Served from the custom domain root (experienceforall.ro).
+          BASE_PATH: /
+
 
       - name: Collect static output
         run: |
@@ -69,10 +70,9 @@ jobs:
       - name: Vendor image assets
         # Images are referenced as root-relative /__l5e/... URLs served by the
         # Lovable preview host. GitHub Pages cannot serve them, so download each
-        # file into the site and rewrite references to include the repo prefix.
+        # file into the site (paths stay root-relative on the custom domain).
         env:
           PREVIEW_HOST: https://id-preview--e59d7c5b-e791-4540-b4d5-311f72a9629d.lovable.app
-          REPO: ${{ github.event.repository.name }}
         run: |
           set -e
           cd _site
@@ -84,10 +84,11 @@ jobs:
             mkdir -p ".$(dirname "$p")"
             curl -sf --retry 3 -o ".$p" "$PREVIEW_HOST$p" || echo "::warning::Could not download $p"
           done < /tmp/asset_paths.txt
-          # Point every reference at /<repo>/__l5e/... (root-relative breaks under a project subpath)
-          grep -rl '/__l5e/' . --include='*.html' --include='*.js' --include='*.css' \
-            | xargs -r sed -i "s|/__l5e/|/${REPO}/__l5e/|g"
           echo "Vendored files:"; find . -path './__l5e/*' -type f | wc -l
+
+      - name: Add CNAME for custom domain
+        run: echo "experienceforall.ro" > _site/CNAME
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
