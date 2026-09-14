@@ -25,32 +25,51 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        # The committed lockfile references Lovable's internal npm mirror, which
+        # GitHub runners cannot reach — resolve from the public registry instead.
+        run: bun install --no-frozen-lockfile
+        env:
+          BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
+
+      - name: Show build tooling version
+        run: bun pm ls | grep -i tanstack-config || true
 
       - name: Build project
         run: bun run build
         env:
+          BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
           # GitHub Pages serves the site at /<repo-name>/ — assets must point there.
           BASE_PATH: /${{ github.event.repository.name }}/
 
-      - name: Verify build output
+      - name: Collect static output
         run: |
-          echo "::group::Build output"
-          ls -la dist
-          ls -la dist/client || true
+          echo "::group::Build tree"
+          ls -la . || true
+          ls -la dist || true
+          ls -la .output || true
           echo "::endgroup::"
-          if [ ! -d dist/client ] || [ -z "$(ls -A dist/client 2>/dev/null)" ]; then
-            echo "::error::dist/client is missing or empty — build did not produce a static site."
+          SITE=""
+          for c in dist/client .output/public dist/public dist/static build/client dist; do
+            if [ -f "$c/index.html" ]; then SITE="$c"; break; fi
+          done
+          if [ -z "$SITE" ]; then
+            SITE=$(dirname "$(find . -path ./node_modules -prune -o -name index.html -print 2>/dev/null | grep -v '^./public/' | head -n 1)")
+          fi
+          if [ -z "$SITE" ] || [ ! -f "$SITE/index.html" ]; then
+            echo "::error::No static site found (no index.html in build output)."
             exit 1
           fi
-
-      - name: Add .nojekyll
-        run: touch dist/client/.nojekyll
+          echo "Using static output: $SITE"
+          rm -rf _site
+          mkdir -p _site
+          cp -r "$SITE"/. _site/
+          touch _site/.nojekyll
+          ls -la _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "${{ github.workspace }}/dist/client"
+          path: "${{ github.workspace }}/_site"
 
   deploy:
     environment:
