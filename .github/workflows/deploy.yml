@@ -25,11 +25,19 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        # The committed lockfile references Lovable's internal npm mirror, which
+        # GitHub runners cannot reach — resolve from the public registry instead.
+        run: bun install --no-frozen-lockfile
+        env:
+          BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
+
+      - name: Show build tooling version
+        run: bun pm ls | grep -i tanstack-config || true
 
       - name: Build project
         run: bun run build
         env:
+          BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
           # GitHub Pages serves the site at /<repo-name>/ — assets must point there.
           BASE_PATH: /${{ github.event.repository.name }}/
 
