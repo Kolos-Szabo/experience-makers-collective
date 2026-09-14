@@ -38,8 +38,9 @@ jobs:
         run: bun run build
         env:
           BUN_CONFIG_REGISTRY: https://registry.npmjs.org/
-          # GitHub Pages serves the site at /<repo-name>/ — assets must point there.
-          BASE_PATH: /${{ github.event.repository.name }}/
+          # Served from the custom domain root (experienceforall.ro).
+          BASE_PATH: /
+
 
       - name: Collect static output
         run: |
