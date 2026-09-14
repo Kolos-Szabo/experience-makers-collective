@@ -66,6 +66,29 @@ jobs:
           touch _site/.nojekyll
           ls -la _site
 
+      - name: Vendor image assets
+        # Images are referenced as root-relative /__l5e/... URLs served by the
+        # Lovable preview host. GitHub Pages cannot serve them, so download each
+        # file into the site and rewrite references to include the repo prefix.
+        env:
+          PREVIEW_HOST: https://id-preview--e59d7c5b-e791-4540-b4d5-311f72a9629d.lovable.app
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          set -e
+          cd _site
+          grep -rhoE '/__l5e/[A-Za-z0-9._/-]+' . --include='*.html' --include='*.js' --include='*.css' \
+            | sort -u > /tmp/asset_paths.txt
+          echo "Found $(wc -l < /tmp/asset_paths.txt) asset paths"
+          while read -r p; do
+            [ -z "$p" ] && continue
+            mkdir -p ".$(dirname "$p")"
+            curl -sf --retry 3 -o ".$p" "$PREVIEW_HOST$p" || echo "::warning::Could not download $p"
+          done < /tmp/asset_paths.txt
+          # Point every reference at /<repo>/__l5e/... (root-relative breaks under a project subpath)
+          grep -rl '/__l5e/' . --include='*.html' --include='*.js' --include='*.css' \
+            | xargs -r sed -i "s|/__l5e/|/${REPO}/__l5e/|g"
+          echo "Vendored files:"; find . -path './__l5e/*' -type f | wc -l
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
