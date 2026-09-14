@@ -9,7 +9,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // GitHub Pages serves the site under https://<user>.github.io/<repo>/ — the
 // Actions workflow injects BASE_PATH=/<repo-name>/ so asset URLs resolve there.
 // Locally (Lovable preview / dev) BASE_PATH is unset and the site stays at "/".
-const basePath = process.env.BASE_PATH ?? "/";
+const basePath = process.env["BASE_PATH"] ?? "/";
 
 const staticPages = [
   "/",
