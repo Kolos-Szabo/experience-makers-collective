@@ -1,27 +1,44 @@
-# Fix GitHub Actions deployment
+# Deploy to GitHub Pages
 
-## Why it fails
+## Why the current workflow fails
 
-The workflow at `.github/workflows/deploy.yml` cannot work for this project, for two independent reasons:
+1. **Wrong package manager** — `.github/workflows/deploy.yml` runs `npm ci`, which needs `package-lock.json`. The project uses Bun (`bun.lock`), so the install step fails immediately.
+2. **No static output** — the site builds as a server-rendered app by default. GitHub Pages can only serve static files, so the build must be switched to pre-render every page to plain HTML at build time. This site is all public content, so static pre-rendering is safe.
 
-1. **Wrong package manager** — it runs `npm ci`, which requires a `package-lock.json`. This project only has `bun.lock` (Bun), so the very first step fails with "npm ci can only install with an existing package-lock.json".
-2. **Wrong hosting target** — the site is a TanStack Start app built as a server (SSR) app targeting a Cloudflare-style worker. `npm run build` does not produce a plain static `./dist` folder that GitHub Pages can serve. Even if step 1 were fixed, the deployed site would be broken.
+## Changes
 
-## Recommended fix
+### 1. Make the site build as static pages
 
-Remove the GitHub Actions workflow and deploy with Lovable instead — one click on **Publish**, no workflow needed, and the server-side rendering works out of the box.
+- Update `vite.config.ts`: enable pre-rendering with an explicit list of all 23 pages (home, contact, cum-invatam, despre, galerie, impact, resurse, siguranta, transparenta, experiențe index + 6 experience detail pages, implica-te index + 4 sub-pages, 4 legal pages), with automatic route discovery turned off.
+- Upgrade `@lovable.dev/vite-tanstack-config` from 2.15.0 to ≥ 2.20.0 (required — older versions silently skip pre-rendering).
+- Add support for a base path so assets load correctly under `https://<user>.github.io/<repo>/`: read `process.env.BASE_PATH` in `vite.config.ts` and pass it as Vite's `base`.
+- Verify locally that the build writes one `index.html` per page into the static output and exits cleanly (no hanging timers).
 
-### Steps
+### 2. Rewrite the GitHub Actions workflow
 
-1. Delete `.github/workflows/deploy.yml` (stops the failing runs and the error emails).
-2. Publish the site from the Lovable Publish button; the site goes live on the stable project URL.
-3. (Optional) Connect a custom domain in Project Settings → Domains if you want your own address instead of the Lovable URL.
+Replace `.github/workflows/deploy.yml`:
 
-## Alternative (only if you specifically want GitHub Pages)
+```text
+on: push to main / manual trigger
+steps:
+  checkout
+  setup Bun (oven-sh/setup-bun)
+  bun install --frozen-lockfile
+  bun run build   with BASE_PATH=/<repo-name>/  (repo name taken automatically from GITHUB_REPOSITORY)
+  upload ./dist as the Pages artifact
+  deploy to GitHub Pages
+```
 
-Rewrite the workflow to use Bun (`oven-sh/setup-bun`, `bun install`, `bun run build`) and reconfigure the app for fully static pre-rendering, plus set the router base path to the repository name. This is more fragile (every page must be pre-renderable, no server functions) and loses nothing by using Lovable Publish instead — so it is not recommended unless GitHub Pages hosting is a hard requirement.
+### 3. Enable GitHub Pages
+
+One manual step only you can do in the repo on GitHub: **Settings → Pages → Source: GitHub Actions**. I'll note this in the handoff; after that, every push to `main` deploys automatically.
+
+## Notes / limits
+
+- All forms already open the visitor's own email app (mailto), and contact/donation actions are phone links — nothing on the site needs a live server, so the static version keeps full functionality.
+- The Lovable preview keeps working as before; this only affects the GitHub deployment.
 
 ## Technical details
 
-- File removed: `.github/workflows/deploy.yml`
-- No changes to app code, pages, or design.
+- Files changed: `vite.config.ts`, `.github/workflows/deploy.yml`, `package.json` (+ lockfile via `bun add -d @lovable.dev/vite-tanstack-config@^2.20.0`).
+- Verification: run the build, confirm 23 HTML files in the output, then check the Actions run after push.
