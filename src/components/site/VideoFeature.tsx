@@ -99,7 +99,7 @@ export function VideoFeature({
 }) {
   return (
     <Section tone={tone}>
-      <SectionHeading eyebrow={eyebrow} title={title} intro={intro} align="center" />
+      <SectionHeading eyebrow={eyebrow} title={title} {...(intro ? { intro } : {})} align="center" />
       <div className="mx-auto mt-12 max-w-5xl">
         <YouTubePlayer autoplay={autoplay} />
         <p className="mt-4 text-center text-sm text-muted-foreground">
