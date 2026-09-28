@@ -108,7 +108,7 @@ export function Header() {
           <a
             href={contact.phoneHref}
             aria-label="Sună Experience for All"
-            className="hidden items-center gap-2 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground xl:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground 2xl:inline-flex"
           >
             <Phone className="size-4" aria-hidden="true" />
             {contact.phoneDisplay}
