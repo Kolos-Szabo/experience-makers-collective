@@ -23,6 +23,7 @@ const involveNav = [
 
 const secondaryNav = [
   { to: "/transparenta", label: "Transparență" },
+  { to: "/raport-de-activitate-2025", label: "Raport 2025" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
