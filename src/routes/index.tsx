@@ -8,6 +8,7 @@ import { CallButton, DonateCallBanner } from "@/components/site/CallToDonate";
 import { PartnersGrid } from "@/components/site/Partners";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { getFeaturedPhotos } from "@/data/gallery";
+import { VideoFeature } from "@/components/site/VideoFeature";
 import {
   images,
   experiences,
@@ -110,6 +111,12 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <VideoFeature
+        autoplay
+        tone="muted"
+        intro="Copii, voluntari și natură — câteva minute din experiențele Experience for All."
+      />
 
       {/* 02 — DE CE EXISTĂ */}
       <Section>
