@@ -21,6 +21,7 @@ const staticPages = [
   "/resurse",
   "/siguranta",
   "/transparenta",
+  "/raport-de-activitate-2025",
   "/experiente/",
   "/experiente/scufundari",
   "/experiente/escalada",

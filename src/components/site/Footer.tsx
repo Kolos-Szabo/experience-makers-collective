@@ -28,6 +28,7 @@ const columns = [
     links: [
       { to: "/impact", label: "Impact" },
       { to: "/transparenta", label: "Transparență" },
+      { to: "/raport-de-activitate-2025", label: "Raport de activitate 2025" },
       { to: "/siguranta", label: "Siguranța copiilor" },
       { to: "/legal/protectia-copilului", label: "Protecția imaginii" },
     ],

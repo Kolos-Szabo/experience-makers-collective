@@ -15,6 +15,7 @@ import { Route as CumInvatamRouteImport } from './routes/cum-invatam'
 import { Route as DespreRouteImport } from './routes/despre'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as RaportDeActivitate2025RouteImport } from './routes/raport-de-activitate-2025'
 import { Route as ResurseRouteImport } from './routes/resurse'
 import { Route as SigurantaRouteImport } from './routes/siguranta'
 import { Route as TransparentaRouteImport } from './routes/transparenta'
@@ -58,6 +59,11 @@ const GalerieRoute = GalerieRouteImport.update({
 const ImpactRoute = ImpactRouteImport.update({
   id: '/impact',
   path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RaportDeActivitate2025Route = RaportDeActivitate2025RouteImport.update({
+  id: '/raport-de-activitate-2025',
+  path: '/raport-de-activitate-2025',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResurseRoute = ResurseRouteImport.update({
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
   '/siguranta': typeof SigurantaRoute
   '/transparenta': typeof TransparentaRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
   '/siguranta': typeof SigurantaRoute
   '/transparenta': typeof TransparentaRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
   '/impact': typeof ImpactRoute
+  '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
   '/siguranta': typeof SigurantaRoute
   '/transparenta': typeof TransparentaRoute
@@ -208,6 +217,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/galerie'
     | '/impact'
+    | '/raport-de-activitate-2025'
     | '/resurse'
     | '/siguranta'
     | '/transparenta'
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/galerie'
     | '/impact'
+    | '/raport-de-activitate-2025'
     | '/resurse'
     | '/siguranta'
     | '/transparenta'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/galerie'
     | '/impact'
+    | '/raport-de-activitate-2025'
     | '/resurse'
     | '/siguranta'
     | '/transparenta'
@@ -275,6 +287,7 @@ export interface RootRouteChildren {
   DespreRoute: typeof DespreRoute
   GalerieRoute: typeof GalerieRoute
   ImpactRoute: typeof ImpactRoute
+  RaportDeActivitate2025Route: typeof RaportDeActivitate2025Route
   ResurseRoute: typeof ResurseRoute
   SigurantaRoute: typeof SigurantaRoute
   TransparentaRoute: typeof TransparentaRoute
@@ -333,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/impact'
       fullPath: '/impact'
       preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/raport-de-activitate-2025': {
+      id: '/raport-de-activitate-2025'
+      path: '/raport-de-activitate-2025'
+      fullPath: '/raport-de-activitate-2025'
+      preLoaderRoute: typeof RaportDeActivitate2025RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resurse': {
@@ -443,6 +463,7 @@ const rootRouteChildren: RootRouteChildren = {
   DespreRoute: DespreRoute,
   GalerieRoute: GalerieRoute,
   ImpactRoute: ImpactRoute,
+  RaportDeActivitate2025Route: RaportDeActivitate2025Route,
   ResurseRoute: ResurseRoute,
   SigurantaRoute: SigurantaRoute,
   TransparentaRoute: TransparentaRoute,

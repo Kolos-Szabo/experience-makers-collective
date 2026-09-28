@@ -9,6 +9,7 @@ import { PartnersGrid } from "@/components/site/Partners";
 import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { getFeaturedPhotos } from "@/data/gallery";
 import { VideoFeature } from "@/components/site/VideoFeature";
+import { reportCover, reportIntro } from "@/data/report2025";
 import {
   images,
   experiences,
@@ -117,6 +118,37 @@ function HomePage() {
         tone="muted"
         intro="Copii, voluntari și natură — câteva minute din experiențele Experience for All."
       />
+
+      {/* RAPORT 2025 */}
+      <Section>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            {reportCover && (
+              <img
+                src={reportCover.src}
+                alt={reportCover.alt}
+                width={1280}
+                height={800}
+                loading="lazy"
+                className="aspect-4/3 w-full rounded-xl object-cover shadow-[var(--shadow-lift)]"
+              />
+            )}
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-eyebrow text-primary">Raport de activitate 2025</p>
+            <h2 className="display-lg mt-4">Activitățile desfășurate în anul 2025</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{reportIntro[0]}</p>
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link to="/raport-de-activitate-2025">
+                  Citește raportul de activitate 2025 <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
 
       {/* 02 — DE CE EXISTĂ */}
       <Section>
