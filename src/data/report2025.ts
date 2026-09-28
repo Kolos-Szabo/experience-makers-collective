@@ -27,7 +27,7 @@ export type ReportActivity = {
   title: string;
   date?: string;
   paragraphs: string[];
-  photo?: { src: string; alt: string };
+  photo?: { src: string; alt: string } | undefined;
 };
 
 export const reportCover = photo(bannerAsset.url);
