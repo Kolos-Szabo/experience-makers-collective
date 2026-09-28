@@ -54,7 +54,7 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              className="whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
               activeProps={{ className: "text-primary" }}
             >
               {item.label}
@@ -69,7 +69,7 @@ export function Header() {
               type="button"
               aria-expanded={involveOpen}
               onClick={() => setInvolveOpen((v) => !v)}
-              className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              className="flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
             >
               Implică-te
               <ChevronDown className="size-4" aria-hidden="true" />
@@ -96,7 +96,7 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              className="whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
               activeProps={{ className: "text-primary" }}
             >
               {item.label}
