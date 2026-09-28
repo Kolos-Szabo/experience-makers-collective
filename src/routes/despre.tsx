@@ -3,6 +3,7 @@ import { PageHero, Section, SectionHeading, Prose, FinalCTA } from "@/components
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { images, org } from "@/data/site";
+import { VideoFeature } from "@/components/site/VideoFeature";
 
 export const Route = createFileRoute("/despre")({
   head: () => ({
@@ -44,6 +45,13 @@ function AboutPage() {
         image={images.expCamp}
         imageAlt="Grup de copii și adulți într-o căruță trasă de cai, pe un drum forestier"
       />
+
+      <VideoFeature
+        eyebrow="Misiunea în imagini"
+        title="Ce înseamnă Experience for All, văzut din interior"
+        tone="muted"
+      />
+
 
       <Section>
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">

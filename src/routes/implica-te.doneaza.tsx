@@ -6,6 +6,7 @@ import { donationUses } from "@/data/site";
 import { ContactInline } from "@/components/site/ContactInline";
 import { CallButton, DonateCallCard } from "@/components/site/CallToDonate";
 import { contact } from "@/data/site";
+import { VideoFeature } from "@/components/site/VideoFeature";
 
 export const Route = createFileRoute("/implica-te/doneaza")({
   head: () => ({
@@ -105,6 +106,12 @@ function DonatePage() {
           </aside>
         </div>
       </Section>
+
+      <VideoFeature
+        eyebrow="Ce susții"
+        title="Sprijinul tău devine o zi ca aceasta"
+        tone="muted"
+      />
 
       <Section tone="deep">
         <SectionHeading
