@@ -39,7 +39,11 @@ function TransparencyPage() {
         eyebrow="Transparență"
         title="Unde merge sprijinul tău?"
         intro="Publicăm ce putem publica și spunem clar ce încă nu avem. Nu prezentăm estimări ca fiind rezultate."
-      />
+      >
+        <Button asChild variant="outline" size="lg">
+          <Link to="/raport-de-activitate-2025">Citește raportul de activitate 2025</Link>
+        </Button>
+      </PageHero>
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-2">

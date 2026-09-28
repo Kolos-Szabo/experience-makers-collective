@@ -43,7 +43,11 @@ function ImpactPage() {
         eyebrow={`Impact Dashboard · ${impactMetrics.period}`}
         title="Ce am creat împreună"
         intro="Publicăm două niveluri de impact: ce se poate număra și ce se poate observa. Nu le confundăm."
-      />
+      >
+        <Button asChild variant="outline" size="lg">
+          <Link to="/raport-de-activitate-2025">Citește raportul de activitate 2025</Link>
+        </Button>
+      </PageHero>
 
       <Section>
         <dl className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
