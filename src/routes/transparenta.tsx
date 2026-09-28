@@ -1,97 +1,69 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
+import { ArrowRight } from "lucide-react";
+import { PageHero, Section } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { org } from "@/data/site";
+import { VideoFeature } from "@/components/site/VideoFeature";
+import { reportCover, reportIntro } from "@/data/report2025";
 
 export const Route = createFileRoute("/transparenta")({
   head: () => ({
     meta: [
-      { title: "Transparență — unde merge sprijinul tău | Experience for All" },
+      { title: "Transparență — Raport de activitate 2025 | Experience for All" },
       {
         name: "description",
         content:
-          "Informații juridice, rapoarte, cheltuieli, parteneri și metodologia de impact a programului Experience for All.",
+          "Raportul de activitate 2025 al programului Experience for All și filmul despre experiențele oferite copiilor din județul Covasna.",
       },
       { property: "og:title", content: "Transparență — Experience for All" },
       {
         property: "og:description",
-        content: "Unde merge sprijinul tău și cum măsurăm impactul.",
+        content: "Raportul de activitate 2025 și filmul programului Experience for All.",
       },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "/transparenta" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/transparenta" }],
   }),
   component: TransparencyPage,
 });
 
-const docs = [
-  ["Rapoarte de activitate", "Se publică anual, după aprobare."],
-  ["Situații financiare", "Venituri, cheltuieli și destinația fondurilor."],
-  ["Proiecte și finanțări", "Sursele de finanțare și proiectele derulate."],
-  ["Politici interne", "Protecția copilului, GDPR, voluntariat, siguranță."],
-];
-
 function TransparencyPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Transparență"
-        title="Unde merge sprijinul tău?"
-        intro="Publicăm ce putem publica și spunem clar ce încă nu avem. Nu prezentăm estimări ca fiind rezultate."
-      >
-        <Button asChild variant="outline" size="lg">
-          <Link to="/raport-de-activitate-2025">Citește raportul de activitate 2025</Link>
-        </Button>
-      </PageHero>
+      <PageHero eyebrow="Transparență" title="Raport de activitate și film" />
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <Reveal className="surface-card p-8">
-            <h2 className="display-md">Organizația coordonatoare</h2>
-            <dl className="mt-6 space-y-4 text-sm">
-              {[
-                ["Județ de activitate", org.county],
-                ["Contact", org.email],
-              ].map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-6 border-b border-border pb-3">
-                  <dt className="text-muted-foreground">{k}</dt>
-                  <dd className="text-right font-medium">{v}</dd>
-                </div>
-              ))}
-            </dl>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            {reportCover && (
+              <img
+                src={reportCover.src}
+                alt={reportCover.alt}
+                width={1280}
+                height={960}
+                loading="lazy"
+                className="aspect-4/3 w-full rounded-xl object-cover shadow-[var(--shadow-lift)]"
+              />
+            )}
           </Reveal>
-
-          <Reveal delay={100} className="surface-card p-8">
-            <h2 className="display-md">Documente</h2>
-            <ul className="mt-6 space-y-5">
-              {docs.map(([t, d]) => (
-                <li key={t}>
-                  <p className="font-display font-bold">{t}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-                </li>
-              ))}
-            </ul>
+          <Reveal delay={100}>
+            <p className="text-eyebrow text-primary">01 · Raport</p>
+            <h2 className="display-lg mt-4">Raport de activitate 2025</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{reportIntro[0]}</p>
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link to="/raport-de-activitate-2025">
+                  Citește raportul de activitate 2025 <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+            </div>
           </Reveal>
         </div>
       </Section>
 
-      <Section tone="muted">
-        <SectionHeading
-          eyebrow="Colaborări instituționale"
-          title="Cu cine lucrăm"
-          intro="Programul se desfășoară în colaborare cu structurile și profesioniștii relevanți din sistemul de protecție a copilului. Publicăm doar colaborările formalizate și confirmate."
-        />
-      </Section>
-
-      <Section>
-        <SectionHeading eyebrow="Metodologie" title="Cum măsurăm impactul" />
-        <div className="mt-10">
-          <Button asChild variant="outline" size="lg">
-            <Link to="/impact">Vezi lanțul input → impact</Link>
-          </Button>
-        </div>
-      </Section>
+      <VideoFeature eyebrow="02 · Film" tone="muted" autoplay />
     </>
   );
 }
