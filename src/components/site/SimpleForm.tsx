@@ -29,31 +29,48 @@ export function SimpleForm({
 }) {
   const [consent, setConsent] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!consent) {
       toast.error("Este necesar acordul privind prelucrarea datelor.");
       return;
     }
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload: Record<string, string> = {};
+    for (const f of fields) payload[f.label] = String(data.get(f.name) ?? "").trim() || "-";
+    const replyTo = fields.find((f) => f.type === "email");
+    if (replyTo) payload["_replyto"] = String(data.get(replyTo.name) ?? "");
+    payload["Acord prelucrare date"] = "DA";
+    payload["Formular"] = formName;
+    payload["_subject"] = `[Website] ${formName}`;
+    payload["_template"] = "table";
+    payload["_captcha"] = "false";
 
-    const data = new FormData(e.currentTarget);
-    const lines = fields.map((f) => {
-      const value = String(data.get(f.name) ?? "").trim();
-      return `${f.label}: ${value || "-"}`;
-    });
-    lines.push("", "Acord prelucrare date: DA", `Formular: ${formName}`);
-
-    const subject = `[Website] ${formName}`;
-    const href = `${contact.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      lines.join("\n"),
-    )}`;
-
-    window.location.href = href;
-    setSent(true);
-    toast.success("Mesajul tău este pregătit pentru trimitere.", {
-      description: `S-a deschis aplicația ta de e-mail cu datele completate. Apasă „Trimite”. Alternativ, ne poți suna la ${contact.phoneDisplay}.`,
-    });
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${contact.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = (await res.json().catch(() => ({}))) as { success?: string | boolean };
+      if (!res.ok || String(json.success) === "false") throw new Error("send failed");
+      form.reset();
+      setConsent(false);
+      setSent(true);
+      toast.success("Mesajul tău a fost trimis cu succes!", {
+        description: "Îți mulțumim! Echipa Experience for All îți va răspunde în curând.",
+      });
+    } catch {
+      toast.error("Mesajul nu a putut fi trimis.", {
+        description: `Te rugăm să încerci din nou sau să ne suni la ${contact.phoneDisplay}.`,
+      });
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
