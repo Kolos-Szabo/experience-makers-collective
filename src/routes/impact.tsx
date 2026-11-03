@@ -19,6 +19,8 @@ export const Route = createFileRoute("/impact")({
         property: "og:description",
         content: "Cifrele arată amploarea. Observațiile arată sensul.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/impact" },
     ],
     links: [{ rel: "canonical", href: "/impact" }],

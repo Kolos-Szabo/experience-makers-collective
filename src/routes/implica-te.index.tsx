@@ -17,6 +17,8 @@ export const Route = createFileRoute("/implica-te/")({
         property: "og:description",
         content: "Construiește următoarea experiență alături de noi.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/implica-te" },
     ],
     links: [{ rel: "canonical", href: "/implica-te" }],

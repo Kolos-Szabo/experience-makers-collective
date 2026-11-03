@@ -19,6 +19,8 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Contactează echipa Experience for All din județul Covasna.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],

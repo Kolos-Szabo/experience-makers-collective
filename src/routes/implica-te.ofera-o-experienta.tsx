@@ -17,6 +17,8 @@ export const Route = createFileRoute("/implica-te/ofera-o-experienta")({
         property: "og:description",
         content: "Transformă ceea ce știi într-o oportunitate de învățare pentru un copil.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/implica-te/ofera-o-experienta" },
     ],
     links: [{ rel: "canonical", href: "/implica-te/ofera-o-experienta" }],

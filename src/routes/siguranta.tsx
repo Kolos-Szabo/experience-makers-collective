@@ -17,6 +17,8 @@ export const Route = createFileRoute("/siguranta")({
         property: "og:description",
         content: "O experiență extraordinară trebuie să fie și o experiență responsabilă.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/siguranta" },
     ],
     links: [{ rel: "canonical", href: "/siguranta" }],

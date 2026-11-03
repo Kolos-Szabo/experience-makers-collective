@@ -20,6 +20,8 @@ export const Route = createFileRoute("/implica-te/parteneri")({
         property: "og:description",
         content: "O experiență poate începe cu o idee. Dar are nevoie de oameni care o fac posibilă.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/implica-te/parteneri" },
     ],
     links: [{ rel: "canonical", href: "/implica-te/parteneri" }],

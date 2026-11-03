@@ -18,6 +18,8 @@ export const Route = createFileRoute("/cum-invatam")({
         property: "og:description",
         content: "Educația non-formală creează contexte în care se învață prin participare și reflecție.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/cum-invatam" },
     ],
     links: [{ rel: "canonical", href: "/cum-invatam" }],

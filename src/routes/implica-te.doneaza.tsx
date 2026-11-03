@@ -22,6 +22,8 @@ export const Route = createFileRoute("/implica-te/doneaza")({
         property: "og:description",
         content: "Contribuie la următoarea experiență. Fără milă, cu posibilități.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/implica-te/doneaza" },
     ],
     links: [{ rel: "canonical", href: "/implica-te/doneaza" }],

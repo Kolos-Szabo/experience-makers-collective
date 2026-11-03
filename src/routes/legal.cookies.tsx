@@ -12,6 +12,8 @@ export const Route = createFileRoute("/legal/cookies")({
       },
       { property: "og:title", content: "Politica de cookie-uri — Experience for All" },
       { property: "og:description", content: "Informații despre cookie-urile utilizate pe site." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/legal/cookies" },
     ],
     links: [{ rel: "canonical", href: "/legal/cookies" }],

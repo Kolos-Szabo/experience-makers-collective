@@ -13,6 +13,8 @@ export const Route = createFileRoute("/legal/confidentialitate")({
       },
       { property: "og:title", content: "Politica de confidențialitate — Experience for All" },
       { property: "og:description", content: "Informații despre prelucrarea datelor personale." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/legal/confidentialitate" },
     ],
     links: [{ rel: "canonical", href: "/legal/confidentialitate" }],
