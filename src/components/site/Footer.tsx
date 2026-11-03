@@ -11,7 +11,7 @@ const columns = [
       { to: "/despre", label: "Despre noi" },
       { to: "/experiente", label: "Experiențe" },
       { to: "/cum-invatam", label: "Cum învățăm" },
-      { to: "/galerie", label: "Galerie" },
+      { to: "/galerie-foto", label: "Galerie foto" },
       { to: "/resurse", label: "Learning Hub" },
     ],
   },

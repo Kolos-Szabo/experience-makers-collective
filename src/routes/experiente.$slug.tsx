@@ -24,7 +24,8 @@ export const Route = createFileRoute("/experiente/$slug")({
         { property: "og:title", content: `${e.title} — Experience for All` },
         { property: "og:description", content: e.short },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/experiente/${params.slug}` },
+        { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: `/experiente/${params.slug}` },
       ],
       links: [{ rel: "canonical", href: `/experiente/${params.slug}` }],
       scripts: [

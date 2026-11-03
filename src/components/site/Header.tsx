@@ -22,6 +22,7 @@ const involveNav = [
 ] as const;
 
 const secondaryNav = [
+  { to: "/galerie-foto", label: "Galerie foto" },
   { to: "/transparenta", label: "Transparență" },
   { to: "/raport-de-activitate-2025", label: "Raport 2025" },
   { to: "/contact", label: "Contact" },
@@ -49,7 +50,7 @@ export function Header() {
           <Logo className="h-9 w-auto md:h-10 lg:h-11" />
         </Link>
 
-        <nav aria-label="Navigație principală" className="hidden items-center gap-1 xl:flex">
+        <nav aria-label="Navigație principală" className="hidden items-center gap-1 2xl:flex">
           {mainNav.map((item) => (
             <Link
               key={item.to}
@@ -138,7 +139,7 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-md border border-border xl:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-md border border-border 2xl:hidden"
             aria-expanded={open}
             aria-controls="meniu-mobil"
             aria-label={open ? "Închide meniul" : "Deschide meniul"}
@@ -151,7 +152,7 @@ export function Header() {
 
       <div
         id="meniu-mobil"
-        className={cn("border-t border-border bg-background xl:hidden", open ? "block" : "hidden")}
+        className={cn("border-t border-border bg-background 2xl:hidden", open ? "block" : "hidden")}
       >
         <nav aria-label="Navigație mobilă" className="container-page grid gap-1 py-4">
           {[...mainNav, ...secondaryNav].map((item) => (

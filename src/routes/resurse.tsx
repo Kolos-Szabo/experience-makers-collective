@@ -17,6 +17,8 @@ export const Route = createFileRoute("/resurse")({
         property: "og:description",
         content: "Resurse de educație non-formală și învățare experiențială, în dezvoltare.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/resurse" },
     ],
     links: [{ rel: "canonical", href: "/resurse" }],

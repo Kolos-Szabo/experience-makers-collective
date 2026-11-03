@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CumInvatamRouteImport } from './routes/cum-invatam'
 import { Route as DespreRouteImport } from './routes/despre'
 import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as GalerieFotoRouteImport } from './routes/galerie-foto'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as RaportDeActivitate2025RouteImport } from './routes/raport-de-activitate-2025'
 import { Route as ResurseRouteImport } from './routes/resurse'
@@ -54,6 +55,11 @@ const DespreRoute = DespreRouteImport.update({
 const GalerieRoute = GalerieRouteImport.update({
   id: '/galerie',
   path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieFotoRoute = GalerieFotoRouteImport.update({
+  id: '/galerie-foto',
+  path: '/galerie-foto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImpactRoute = ImpactRouteImport.update({
@@ -144,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/impact': typeof ImpactRoute
   '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
@@ -167,6 +174,7 @@ export interface FileRoutesByTo {
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/impact': typeof ImpactRoute
   '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
@@ -191,6 +199,7 @@ export interface FileRoutesById {
   '/cum-invatam': typeof CumInvatamRoute
   '/despre': typeof DespreRoute
   '/galerie': typeof GalerieRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/impact': typeof ImpactRoute
   '/raport-de-activitate-2025': typeof RaportDeActivitate2025Route
   '/resurse': typeof ResurseRoute
@@ -216,6 +225,7 @@ export interface FileRouteTypes {
     | '/cum-invatam'
     | '/despre'
     | '/galerie'
+    | '/galerie-foto'
     | '/impact'
     | '/raport-de-activitate-2025'
     | '/resurse'
@@ -239,6 +249,7 @@ export interface FileRouteTypes {
     | '/cum-invatam'
     | '/despre'
     | '/galerie'
+    | '/galerie-foto'
     | '/impact'
     | '/raport-de-activitate-2025'
     | '/resurse'
@@ -262,6 +273,7 @@ export interface FileRouteTypes {
     | '/cum-invatam'
     | '/despre'
     | '/galerie'
+    | '/galerie-foto'
     | '/impact'
     | '/raport-de-activitate-2025'
     | '/resurse'
@@ -286,6 +298,7 @@ export interface RootRouteChildren {
   CumInvatamRoute: typeof CumInvatamRoute
   DespreRoute: typeof DespreRoute
   GalerieRoute: typeof GalerieRoute
+  GalerieFotoRoute: typeof GalerieFotoRoute
   ImpactRoute: typeof ImpactRoute
   RaportDeActivitate2025Route: typeof RaportDeActivitate2025Route
   ResurseRoute: typeof ResurseRoute
@@ -339,6 +352,13 @@ declare module '@tanstack/react-router' {
       path: '/galerie'
       fullPath: '/galerie'
       preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie-foto': {
+      id: '/galerie-foto'
+      path: '/galerie-foto'
+      fullPath: '/galerie-foto'
+      preLoaderRoute: typeof GalerieFotoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impact': {
@@ -462,6 +482,7 @@ const rootRouteChildren: RootRouteChildren = {
   CumInvatamRoute: CumInvatamRoute,
   DespreRoute: DespreRoute,
   GalerieRoute: GalerieRoute,
+  GalerieFotoRoute: GalerieFotoRoute,
   ImpactRoute: ImpactRoute,
   RaportDeActivitate2025Route: RaportDeActivitate2025Route,
   ResurseRoute: ResurseRoute,

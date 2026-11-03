@@ -19,6 +19,8 @@ export const Route = createFileRoute("/despre")({
         property: "og:description",
         content: "Un program social și educațional bazat pe experiențe outdoor și educație non-formală.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/despre" },
     ],
     links: [{ rel: "canonical", href: "/despre" }],

@@ -17,6 +17,8 @@ export const Route = createFileRoute("/implica-te/voluntariat")({
         property: "og:description",
         content: "Uneori, experiența începe cu cineva care spune „vin și eu”.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/implica-te/voluntariat" },
     ],
     links: [{ rel: "canonical", href: "/implica-te/voluntariat" }],

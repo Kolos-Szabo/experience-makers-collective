@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { Lightbox } from "@/components/site/Lightbox";
 import { activeGalleryCategories, galleryPhotos, type GalleryPhoto } from "@/data/gallery";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { galleryMedia } from "@/data/gallery-media";
 
 export function GalleryGrid({
   photos = galleryPhotos,
@@ -27,7 +29,7 @@ export function GalleryGrid({
       {showFilters && (
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrează galeria">
           {cats.map((c) => (
-            <button
+            <Button
               key={c}
               type="button"
               aria-pressed={filter === c}
@@ -42,8 +44,8 @@ export function GalleryGrid({
                   : "border-border bg-card text-foreground hover:bg-secondary",
               )}
             >
-              {c}
-            </button>
+              {c === "Toate" ? "Toate fotografiile" : c}
+            </Button>
           ))}
         </div>
       )}
@@ -54,32 +56,33 @@ export function GalleryGrid({
           showFilters && "mt-10",
         )}
       >
-        {items.map((photo, i) => (
+        {items.map((photo, i) => {
+          const media = (galleryMedia as Record<string, { width: number; height: number; thumbnail: string; srcSet: string }>)[photo.src];
+          return (
           <li key={photo.src} className="mb-4 break-inside-avoid">
-            <button
+            <Button
+              variant="ghost"
               type="button"
               onClick={() => setActive(i)}
               aria-label={`Deschide fotografia: ${photo.alt}`}
-              className="group block w-full overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-soft)]"
+              className="group block h-auto w-full overflow-hidden rounded-xl border border-border bg-card p-0 shadow-[var(--shadow-soft)]"
             >
               <img
-                src={photo.src}
+                src={media?.thumbnail ?? photo.src}
+                srcSet={media?.srcSet}
+                width={media?.width}
+                height={media?.height}
                 alt={photo.alt}
                 loading="lazy"
                 decoding="async"
                 sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
                 className={cn(
-                  "w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]",
-                  photo.orientation === "portrait"
-                    ? "aspect-3/4"
-                    : photo.orientation === "square"
-                      ? "aspect-square"
-                      : "aspect-4/3",
+                  "h-auto w-full object-contain transition-opacity duration-300 group-hover:opacity-90 motion-reduce:transition-none",
                 )}
               />
-            </button>
+            </Button>
           </li>
-        ))}
+        ); })}
       </ul>
 
       {items.length === 0 && (

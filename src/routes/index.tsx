@@ -37,6 +37,8 @@ export const Route = createFileRoute("/")({
           "Program social și educațional bazat pe experiențe outdoor și educație non-formală în județul Covasna.",
       },
       { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -374,17 +376,17 @@ function HomePage() {
       <Section>
         <SectionHeading
           eyebrow="Galerie"
-          title="Experiențe care rămân în amintire"
-          intro="Fotografii reale din apă, din tabere și de pe traseu — momente trăite de copiii și voluntarii programului."
+          title="Povești în imagini"
+          intro="Descoperă momentele speciale, experiențele și oamenii care dau viață proiectelor noastre."
           align="center"
         />
         <div className="mt-12">
-          <GalleryGrid photos={getFeaturedPhotos(6)} showFilters={false} />
+          <GalleryGrid photos={getFeaturedPhotos(8)} showFilters={false} />
         </div>
         <div className="mt-10 flex justify-center">
           <Button asChild size="lg">
-            <Link to="/galerie">
-              Vezi toate fotografiile
+            <Link to="/galerie-foto">
+              Vezi întreaga galerie
               <ArrowRight className="size-4" />
             </Link>
           </Button>

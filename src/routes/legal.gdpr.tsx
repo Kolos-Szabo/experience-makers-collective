@@ -13,6 +13,8 @@ export const Route = createFileRoute("/legal/gdpr")({
       },
       { property: "og:title", content: "GDPR — Experience for All" },
       { property: "og:description", content: "Drepturile tale privind prelucrarea datelor personale." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/legal/gdpr" },
     ],
     links: [{ rel: "canonical", href: "/legal/gdpr" }],

@@ -17,6 +17,8 @@ export const Route = createFileRoute("/legal/protectia-copilului")({
         property: "og:description",
         content: "Reguli clare privind protecția copiilor și a imaginii lor.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/legal/protectia-copilului" },
     ],
     links: [{ rel: "canonical", href: "/legal/protectia-copilului" }],

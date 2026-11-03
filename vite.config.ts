@@ -17,6 +17,7 @@ const staticPages = [
   "/cum-invatam",
   "/despre",
   "/galerie",
+  "/galerie-foto",
   "/impact",
   "/resurse",
   "/siguranta",

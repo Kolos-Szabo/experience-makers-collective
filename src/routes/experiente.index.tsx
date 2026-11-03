@@ -20,6 +20,8 @@ export const Route = createFileRoute("/experiente/")({
         property: "og:description",
         content: "Descoperă experiențele Experience for All și ce pot învăța copiii prin fiecare.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/experiente" },
     ],
     links: [{ rel: "canonical", href: "/experiente" }],
