@@ -1,6 +1,6 @@
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { org, contact } from "@/data/site";
 import { Logo } from "@/components/site/Logo";
 

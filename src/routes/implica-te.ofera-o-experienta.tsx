@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
-import { SimpleForm, type Field } from "@/components/site/SimpleForm";
+import { ContactOptions } from "@/components/site/ContactOptions";
 
 export const Route = createFileRoute("/implica-te/ofera-o-experienta")({
   head: () => ({
@@ -38,21 +38,6 @@ const examples = [
   "meșteșugar",
   "biolog",
   "muzician",
-];
-
-const fields: Field[] = [
-  { name: "nume", label: "Cine ești", required: true },
-  { name: "email", label: "E-mail", type: "email", required: true },
-  { name: "telefon", label: "Telefon", type: "tel" },
-  { name: "profesie", label: "Profesie / domeniu" },
-  { name: "experienta", label: "Ce experiență oferi?", type: "textarea", required: true },
-  {
-    name: "detalii",
-    label: "Detalii (vârstă potrivită, durată, locație, echipament necesar, condiții de siguranță)",
-    type: "textarea",
-    full: true,
-  },
-  { name: "disponibilitate", label: "Disponibilitate" },
 ];
 
 function OfferPage() {
@@ -100,11 +85,7 @@ function OfferPage() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="display-md mb-6">Propune o experiență</h2>
-            <SimpleForm
-              fields={fields}
-              submitLabel="Trimite propunerea"
-              formName="ofera-experienta"
-            />
+            <ContactOptions intro="Spune-ne pe scurt cine ești, ce experiență poți oferi și când ești disponibil." />
           </Reveal>
         </div>
       </Section>
