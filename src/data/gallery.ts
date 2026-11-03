@@ -31,6 +31,15 @@ import poolGearAsset from "@/assets/experience-for-all-copii-bazin-echipament-sc
 import indoorPoolAsset from "@/assets/experience-for-all-bazin-acoperit-grup-instruire.jpg.asset.json";
 import hillCampAsset from "@/assets/experience-for-all-tabara-deal-priveliste-lac.jpg.asset.json";
 import eventBannerAsset from "@/assets/experience-for-all-banner-eveniment-lac-participanti.jpg.asset.json";
+import hikeMeadow from "@/assets/gallery/drumetie-grup-pajiste-toamna.jpg.asset.json";
+import exploreLeaves from "@/assets/gallery/explorare-frunze-padure.jpg.asset.json";
+import hikeHill from "@/assets/gallery/aventura-deal-toamna.jpg.asset.json";
+import interactiveWorkshop from "@/assets/gallery/atelier-interactiv-grup.jpg.asset.json";
+import sharedMeal from "@/assets/gallery/masa-impreuna-aer-liber.jpg.asset.json";
+import forestEdge from "@/assets/gallery/drumetie-marginea-padurii.jpg.asset.json";
+import sunnyTrail from "@/assets/gallery/plimbare-traseu-insorit.jpg.asset.json";
+import forestTrail from "@/assets/gallery/grup-poteci-padure.jpg.asset.json";
+import campfireCooking from "@/assets/gallery/gatit-impreuna-foc-tabara.jpg.asset.json";
 
 /** Categoriile disponibile. Adaugă una nouă doar dacă e cu adevărat necesar. */
 export const galleryCategories = [
@@ -66,6 +75,15 @@ export type GalleryPhoto = {
 };
 
 export const galleryPhotos: GalleryPhoto[] = [
+  { src: hikeMeadow.url, alt: "Grup de tineri și un câine pe o pajiște cu arbori și frunze de toamnă", category: "Natură", orientation: "landscape", featured: true },
+  { src: exploreLeaves.url, alt: "Participant în geacă albastră, aplecat lângă un copac pe solul acoperit de frunze", category: "Natură", orientation: "portrait" },
+  { src: hikeHill.url, alt: "Tineri urcând pe un deal ierbos, printre arbori cu frunziș de toamnă", category: "Aventură", orientation: "landscape" },
+  { src: interactiveWorkshop.url, alt: "Grup de tineri și adulți în jurul unei mese cu materiale, într-o sală cu ferestre mari", category: "Învățare", orientation: "landscape", featured: true },
+  { src: sharedMeal.url, alt: "Participanți adunați în jurul unei mese cu mâncare, în aer liber, lângă pădure", category: "Tabere", orientation: "landscape" },
+  { src: forestEdge.url, alt: "Grup mergând pe o potecă însorită la marginea pădurii, cu dealuri în fundal", category: "Natură", orientation: "landscape" },
+  { src: sunnyTrail.url, alt: "Participanți pe un drum însorit, între pajiște și arbori, în timpul unei plimbări", category: "Aventură", orientation: "portrait" },
+  { src: forestTrail.url, alt: "Tineri și un câine pe o potecă acoperită cu frunze, în mijlocul pădurii", category: "Natură", orientation: "landscape" },
+  { src: campfireCooking.url, alt: "Tineri și adulți pregătind mâncare împreună în jurul unui foc aprins într-o vatră în aer liber", category: "Tabere", orientation: "landscape", featured: true },
   {
     src: heroWaterAsset.url,
     alt: "Grup de adolescenți cu veste de salvare pe o plută de lemn, pe un lac înconjurat de dealuri împădurite",
