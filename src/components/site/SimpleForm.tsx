@@ -30,6 +30,7 @@ export function SimpleForm({
   const [consent, setConsent] = useState(false);
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [fallback, setFallback] = useState<null | { reason: "activation" | "error"; text: string }>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -49,15 +50,33 @@ export function SimpleForm({
     payload["_template"] = "table";
     payload["_captcha"] = "false";
 
+    const summary =
+      `Bună ziua! Formular „${formName}” de pe experienceforall.ro:\n` +
+      fields.map((f) => `${f.label}: ${payload[f.label]}`).join("\n");
+
     setSending(true);
+    setFallback(null);
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${contact.email}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       });
-      const json = (await res.json().catch(() => ({}))) as { success?: string | boolean };
-      if (!res.ok || String(json.success) === "false") throw new Error("send failed");
+      const json = (await res.json().catch(() => ({}))) as {
+        success?: string | boolean;
+        message?: string;
+      };
+      if (!res.ok || String(json.success) === "false") {
+        const activation = /activat/i.test(json.message ?? "");
+        setFallback({ reason: activation ? "activation" : "error", text: summary });
+        toast.error(
+          activation
+            ? "Trimiterea automată nu este încă activă."
+            : "Mesajul nu a putut fi trimis automat.",
+          { description: "Folosește variantele de mai jos — datele tale sunt deja completate." },
+        );
+        return;
+      }
       form.reset();
       setConsent(false);
       setSent(true);
@@ -65,8 +84,9 @@ export function SimpleForm({
         description: "Îți mulțumim! Echipa Experience for All îți va răspunde în curând.",
       });
     } catch {
-      toast.error("Mesajul nu a putut fi trimis.", {
-        description: `Te rugăm să încerci din nou sau să ne suni la ${contact.phoneDisplay}.`,
+      setFallback({ reason: "error", text: summary });
+      toast.error("Mesajul nu a putut fi trimis automat.", {
+        description: "Folosește variantele de mai jos — datele tale sunt deja completate.",
       });
     } finally {
       setSending(false);
@@ -124,12 +144,51 @@ export function SimpleForm({
         </Label>
       </div>
 
-      <Button type="submit" variant="cta" size="lg" className="mt-6 w-full sm:w-auto">
-        {submitLabel}
+      <Button
+        type="submit"
+        variant="cta"
+        size="lg"
+        disabled={sending}
+        className="mt-6 w-full sm:w-auto"
+      >
+        {sending ? "Se trimite…" : submitLabel}
       </Button>
+      {fallback && (
+        <div role="alert" className="mt-6 rounded-md border border-primary/40 bg-muted p-4">
+          <p className="text-sm font-semibold text-foreground">
+            {fallback.reason === "activation"
+              ? "Trimiterea automată a formularului așteaptă activarea de către echipa noastră."
+              : "Nu am putut trimite mesajul automat (conexiune sau serviciu indisponibil)."}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Ca solicitarea ta să nu se piardă, trimite-o cu un click — mesajul e deja completat:
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Button asChild variant="cta" size="sm">
+              <a
+                href={`https://wa.me/40755011497?text=${encodeURIComponent(fallback.text)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Trimite pe WhatsApp
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <a
+                href={`mailto:${contact.email}?subject=${encodeURIComponent(`[Website] ${formName}`)}&body=${encodeURIComponent(fallback.text)}`}
+              >
+                Trimite pe e-mail
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <a href={contact.phoneHref}>Sună: {contact.phoneDisplay}</a>
+            </Button>
+          </div>
+        </div>
+      )}
       <p className="mt-4 text-xs text-muted-foreground" role="status">
         {sent
-          ? `Am deschis aplicația ta de e-mail cu mesajul completat către ${contact.email}. Dacă nu s-a deschis, scrie-ne direct la această adresă.`
+          ? "Mesajul a fost trimis. Îți mulțumim!"
           : "Câmpurile marcate cu * sunt obligatorii."}
       </p>
       <div className="mt-6 border-t border-border pt-4">
