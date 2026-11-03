@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { org, contact } from "@/data/site";
@@ -73,10 +74,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactează Experience for All pe WhatsApp"
-                className="inline-flex items-center gap-2 underline-offset-4 hover:text-cream hover:underline"
+                className="mt-1 inline-flex min-h-11 items-center gap-2 rounded-md bg-whatsapp px-4 font-display text-sm font-semibold text-whatsapp-foreground transition-opacity hover:opacity-90"
               >
-                <MessageCircle className="size-4" aria-hidden="true" />
-                WhatsApp
+                <WhatsAppIcon className="size-4" />
+                Contactează-ne pe WhatsApp
               </a>
             </div>
           </address>
