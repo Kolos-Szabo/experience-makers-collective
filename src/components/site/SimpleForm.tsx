@@ -42,12 +42,12 @@ export function SimpleForm({
     const payload: Record<string, string> = {};
     for (const f of fields) payload[f.label] = String(data.get(f.name) ?? "").trim() || "-";
     const replyTo = fields.find((f) => f.type === "email");
-    if (replyTo) payload._replyto = String(data.get(replyTo.name) ?? "");
+    if (replyTo) payload["_replyto"] = String(data.get(replyTo.name) ?? "");
     payload["Acord prelucrare date"] = "DA";
     payload["Formular"] = formName;
-    payload._subject = `[Website] ${formName}`;
-    payload._template = "table";
-    payload._captcha = "false";
+    payload["_subject"] = `[Website] ${formName}`;
+    payload["_template"] = "table";
+    payload["_captcha"] = "false";
 
     setSending(true);
     try {
