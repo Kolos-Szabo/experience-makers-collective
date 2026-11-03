@@ -29,6 +29,8 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -88,6 +90,8 @@
   --popover: #f8f6f0;
   --popover-foreground: var(--charcoal);
   --primary: var(--forest);
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #0b2e1a;
   --primary-foreground: #f8f6f0;
   --secondary: color-mix(in srgb, #4cb7c5 20%, #f8f6f0);
   --secondary-foreground: var(--forest-deep);

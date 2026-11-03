@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
-import { SimpleForm, type Field } from "@/components/site/SimpleForm";
+import { ContactOptions } from "@/components/site/ContactOptions";
 
 export const Route = createFileRoute("/implica-te/voluntariat")({
   head: () => ({
@@ -35,18 +35,6 @@ const roles = [
   "specialist",
   "logistică",
   "susținător al experienței",
-];
-
-const fields: Field[] = [
-  { name: "nume", label: "Nume și prenume", required: true },
-  { name: "email", label: "E-mail", type: "email", required: true },
-  { name: "telefon", label: "Telefon", type: "tel" },
-  { name: "oras", label: "Oraș / localitate" },
-  { name: "interese", label: "Domenii de interes", placeholder: "ex: apă, aventură, ateliere" },
-  { name: "competente", label: "Competențe / certificări" },
-  { name: "experienta", label: "Experiență relevantă", full: true },
-  { name: "disponibilitate", label: "Disponibilitate", placeholder: "ex: weekenduri, vara" },
-  { name: "motivatie", label: "De ce vrei să te implici?", type: "textarea" },
 ];
 
 function VolunteerPage() {
@@ -88,7 +76,7 @@ function VolunteerPage() {
           </Reveal>
           <Reveal delay={100}>
             <h2 className="display-md mb-6">Înscrie-te ca voluntar</h2>
-            <SimpleForm fields={fields} submitLabel="Devino voluntar" formName="voluntariat" />
+            <ContactOptions intro="Spune-ne cine ești, ce știi să faci și când ești disponibil." />
           </Reveal>
         </div>
       </Section>

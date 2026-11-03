@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
-import { SimpleForm, type Field } from "@/components/site/SimpleForm";
+import { ContactOptions } from "@/components/site/ContactOptions";
 import { partnerContributions } from "@/data/site";
 import { PartnersGrid } from "@/components/site/Partners";
 import { DonateCallBanner } from "@/components/site/CallToDonate";
@@ -26,15 +26,6 @@ export const Route = createFileRoute("/implica-te/parteneri")({
   }),
   component: PartnersPage,
 });
-
-const fields: Field[] = [
-  { name: "organizatie", label: "Organizație / companie", required: true },
-  { name: "persoana", label: "Persoană de contact", required: true },
-  { name: "email", label: "E-mail", type: "email", required: true },
-  { name: "telefon", label: "Telefon", type: "tel" },
-  { name: "tip", label: "Tip de contribuție", placeholder: "ex: transport, echipamente" },
-  { name: "detalii", label: "Detalii despre ce puteți oferi", type: "textarea", required: true },
-];
 
 function PartnersPage() {
   return (
@@ -66,7 +57,7 @@ function PartnersPage() {
         <div className="mt-16 max-w-2xl">
           <Reveal delay={100}>
             <h2 className="display-md mb-6">Devino partener</h2>
-            <SimpleForm fields={fields} submitLabel="Trimite solicitarea" formName="parteneriat" />
+            <ContactOptions intro="Spune-ne ce organizație reprezinți și ce tip de contribuție poți oferi." />
           </Reveal>
         </div>
 

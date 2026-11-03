@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { PageHero, Section } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
-import { SimpleForm, type Field } from "@/components/site/SimpleForm";
+import { ContactOptions } from "@/components/site/ContactOptions";
 import { org, contact } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
@@ -25,13 +25,6 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
-
-const fields: Field[] = [
-  { name: "nume", label: "Nume", required: true },
-  { name: "email", label: "E-mail", type: "email", required: true },
-  { name: "subiect", label: "Subiect", full: true },
-  { name: "mesaj", label: "Mesaj", type: "textarea", required: true },
-];
 
 const audiences = [
   ["Case de tip familial și profesioniști", "Cum funcționează programul și cum putem colabora."],
@@ -108,8 +101,8 @@ function ContactPage() {
             </Reveal>
           </div>
           <Reveal delay={100}>
-            <h2 className="display-md mb-6">Scrie-ne</h2>
-            <SimpleForm fields={fields} submitLabel="Trimite mesajul" formName="contact" />
+            <h2 className="display-md mb-6">Contactează-ne direct</h2>
+            <ContactOptions />
           </Reveal>
         </div>
       </Section>
