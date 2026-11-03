@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { test, expect } from "bun:test";
 import { galleryPhotos, activeGalleryCategories, getFeaturedPhotos } from "./gallery";
 import { galleryMedia } from "./gallery-media";
